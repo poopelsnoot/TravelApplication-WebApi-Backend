@@ -3868,11 +3868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Services\\Services.csproj",
+      "projectPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\sofie\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Services\\obj\\",
+      "outputPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3894,20 +3894,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Configuration\\Configuration.csproj": {
-              "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Configuration\\Configuration.csproj"
+            "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Configuration\\Configuration.csproj": {
+              "projectPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Configuration\\Configuration.csproj"
             },
-            "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj": {
-              "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj"
+            "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj": {
+              "projectPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj"
             },
             "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbModels\\DbModels.csproj": {
               "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbModels\\DbModels.csproj"
             },
-            "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbRepos\\DbRepos.csproj": {
-              "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbRepos\\DbRepos.csproj"
+            "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbRepos\\DbRepos.csproj": {
+              "projectPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbRepos\\DbRepos.csproj"
             },
-            "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj": {
-              "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj"
+            "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj"
             }
           }
         }
