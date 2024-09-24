@@ -42,7 +42,6 @@ namespace AppWebbApi.Controllers
             }
             
         }
-
     
         public csAttractionController(IAttractionService service, ILogger<csAttractionController> logger)
         {
