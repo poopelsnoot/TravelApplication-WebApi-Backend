@@ -28,7 +28,7 @@ public interface IAddress{
     public string Country {get; set;}
 
     //navigation props
-    public IAttraction Attraction {get; set;}
+    public List<IAttraction> Attractions {get; set;}
 
 }
 

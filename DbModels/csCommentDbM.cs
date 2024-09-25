@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 //using Newtonsoft.Json;
 
 using Models;
@@ -11,6 +12,23 @@ public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csComment
     //primary key
     [Key]
     public override Guid CommentId { get; set; }
+    [Required]
+    public override string Comment { get; set; }
+    [Required]
+    public override DateTime Date {get; set; }
+
+    #region fixing interface error
+    [JsonIgnore]
+    public virtual csAttractionDbM AttractionDbM { get; set; } = null;
+    [NotMapped]
+    public override IAttraction Attraction { get => AttractionDbM; set => new NotImplementedException();}
+
+    [JsonIgnore]
+    public virtual csUserDbM UserDbM { get; set; } = null;
+    [NotMapped]
+    public override IUser User { get => UserDbM; set => new NotImplementedException();}
+
+    #endregion
     
     #region implementing IEquatable
     public bool Equals(csCommentDbM other) => (other != null) ?((Comment, Date) ==

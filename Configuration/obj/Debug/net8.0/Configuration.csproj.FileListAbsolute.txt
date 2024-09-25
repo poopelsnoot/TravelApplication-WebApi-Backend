@@ -10,3 +10,16 @@ c:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\Web
 c:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\Configuration\obj\Debug\net8.0\refint\Configuration.dll
 c:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.pdb
 C:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\Configuration\obj\Debug\net8.0\ref\Configuration.dll
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\bin\Debug\net8.0\Configuration.deps.json
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\bin\Debug\net8.0\Configuration.dll
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\bin\Debug\net8.0\Configuration.pdb
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.csproj.AssemblyReference.cache
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.AssemblyInfoInputs.cache
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.AssemblyInfo.cs
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.csproj.CoreCompileInputs.cache
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.sourcelink.json
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.dll
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\refint\Configuration.dll
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.pdb
+c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\ref\Configuration.dll

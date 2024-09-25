@@ -2,6 +2,7 @@
 
 using Configuration;
 using DbModels;
+using Models;
 
 namespace DbContext;
 
@@ -11,7 +12,11 @@ namespace DbContext;
 public class csMainDbContext : Microsoft.EntityFrameworkCore.DbContext
 {
     #region C# model of database tables
-    
+    public DbSet<csAddressDbM> Addresses {get; set;} 
+    public DbSet<csAttractionDbM> Attractions {get; set;}
+    public DbSet<csCommentDbM> Comments {get; set;}
+    public DbSet<csUserDbM> Users {get; set;}
+
     #endregion
 
 

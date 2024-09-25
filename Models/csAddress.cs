@@ -13,8 +13,8 @@ public class csAddress : ISeed<csAddress>, IAddress, IEquatable<csAddress>
     public virtual string Country { get; set;}
 
     // navigation props
-    // An adress can have one attraction
-    public virtual IAttraction Attraction { get; set;}
+    // An adress can have many attractions
+    public virtual List<IAttraction> Attractions { get; set;}
 
     #region implementing IEquatable
     public bool Equals(csAddress other) => (other != null) ?((Street, Zip, City, Country) ==

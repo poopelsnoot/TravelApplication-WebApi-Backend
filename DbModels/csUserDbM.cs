@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 //using Newtonsoft.Json;
 
 using Models;
@@ -11,6 +12,19 @@ public class csUserDbM : csUser, ISeed<csUserDbM>, IEquatable<csUserDbM>
     //primary key
     [Key]
     public override Guid UserId { get; set; }
+    [Required]
+    public override string FirstName { get; set; }
+    [Required]
+    public override string LastName { get; set; }
+    [Required]
+    public override int Age { get; set; }
+
+     #region fixing interface error
+    [JsonIgnore]
+    public virtual List<csCommentDbM> CommentDbM { get; set; } = null;
+    [NotMapped]
+    public override List<IComment> Comments { get => CommentDbM?.ToList<IComment>(); set => new NotImplementedException();}
+    #endregion
     
     #region implementing IEquatable
     public bool Equals(csUserDbM other) => (other != null) ?((FirstName, LastName, Age) ==
@@ -28,7 +42,4 @@ public class csUserDbM : csUser, ISeed<csUserDbM>, IEquatable<csUserDbM>
     }
     #endregion
 
-    #region Implementing IEquatable
-
-    #endregion
 }
