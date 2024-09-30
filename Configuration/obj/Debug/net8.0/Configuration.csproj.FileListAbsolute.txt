@@ -23,3 +23,4 @@ c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiPro
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\refint\Configuration.dll
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.pdb
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Configuration\obj\Debug\net8.0\ref\Configuration.dll
+C:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\Configuration\obj\Debug\net8.0\Configuration.sourcelink.json

@@ -41,3 +41,4 @@ c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiPro
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbContext\obj\Debug\net8.0\DbContext.pdb
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbContext\obj\Debug\net8.0\DbContext.genruntimeconfig.cache
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbContext\obj\Debug\net8.0\ref\DbContext.dll
+C:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\DbContext\obj\Debug\net8.0\DbContext.sourcelink.json

@@ -21,7 +21,10 @@ builder.Services.AddSwaggerGen();
 #endregion
 
 #region Dependency Inject
-builder.Services.AddScoped<IAttractionService, csAttractionService>();
+builder.Services.AddScoped<IAttractionService, csAttractionServiceDb>();
+builder.Services.AddScoped<ISeedService, csSeedServiceDb>();
+builder.Services.AddScoped<ICommentService, csCommentServiceDb>();
+builder.Services.AddScoped<IUserService, csUserServiceDb>();
 #endregion
 
 var app = builder.Build();

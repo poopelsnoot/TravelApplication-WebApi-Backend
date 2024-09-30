@@ -45,3 +45,4 @@ c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiPro
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Services\obj\Debug\net8.0\refint\Services.dll
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Services\obj\Debug\net8.0\Services.pdb
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Services\obj\Debug\net8.0\ref\Services.dll
+c:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\Services\obj\Debug\net8.0\Services.sourcelink.json

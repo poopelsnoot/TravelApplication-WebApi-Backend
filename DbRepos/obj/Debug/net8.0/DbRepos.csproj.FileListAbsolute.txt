@@ -41,3 +41,4 @@ c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiPro
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbRepos\obj\Debug\net8.0\refint\DbRepos.dll
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbRepos\obj\Debug\net8.0\DbRepos.pdb
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbRepos\obj\Debug\net8.0\ref\DbRepos.dll
+c:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\DbRepos\obj\Debug\net8.0\DbRepos.sourcelink.json

@@ -29,3 +29,4 @@ c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiPro
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Models\obj\Debug\net8.0\refint\Models.dll
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Models\obj\Debug\net8.0\Models.pdb
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Models\obj\Debug\net8.0\ref\Models.dll
+C:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\Models\obj\Debug\net8.0\Models.sourcelink.json

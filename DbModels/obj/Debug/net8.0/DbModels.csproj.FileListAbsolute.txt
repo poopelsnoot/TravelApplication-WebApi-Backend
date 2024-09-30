@@ -33,3 +33,4 @@ c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiPro
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbModels\obj\Debug\net8.0\refint\DbModels.dll
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbModels\obj\Debug\net8.0\DbModels.pdb
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbModels\obj\Debug\net8.0\ref\DbModels.dll
+C:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\DbModels\obj\Debug\net8.0\DbModels.sourcelink.json

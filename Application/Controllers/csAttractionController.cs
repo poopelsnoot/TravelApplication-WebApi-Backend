@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
 using Seido.Utilities.SeedGenerator;
 
 using Models;
@@ -22,16 +21,16 @@ namespace AppWebbApi.Controllers
         private IAttractionService _service = null;
         
         [HttpGet()]
-        [ActionName("Attractions")]
-        [ProducesResponseType(200, Type = typeof(List<csAttraction>))]
+        [ActionName("ReadAttractions")]
+        [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
         [ProducesResponseType(400, Type = typeof(string))]
-        public async Task<IActionResult> ListAttractions(string count = "5")
+        public async Task<IActionResult> ReadAttractions(string count = "5")
         {
             try
             {
                 _logger.LogInformation("Endpoint ListAttraction executed");
                 int _count = int.Parse(count);
-                var attractons = _service.ListAttractions(_count);
+                var attractons = _service.ReadAttractions(_count);
                 
                 return Ok(attractons);
             }

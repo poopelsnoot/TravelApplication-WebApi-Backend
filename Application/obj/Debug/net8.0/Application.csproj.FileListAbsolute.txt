@@ -249,3 +249,4 @@ c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiPro
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Application\obj\Debug\net8.0\Application.pdb
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Application\obj\Debug\net8.0\Application.genruntimeconfig.cache
 c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\Application\obj\Debug\net8.0\ref\Application.dll
+c:\Users\sofie\OneDrive\Bilder\.NET utveckling\Dataåtkomster i .NET\Project\WebApiProject\Application\obj\Debug\net8.0\Application.sourcelink.json

@@ -26,9 +26,9 @@ public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<
     public override IAddress Address { get => AddressDbM; set => new NotImplementedException();}
 
     [JsonIgnore]
-    public virtual List<csCommentDbM> CommentDbM { get; set; } = null;
+    public virtual List<csCommentDbM> CommentsDbM { get; set; } = null;
     [NotMapped]
-    public override List<IComment> Comments { get => CommentDbM?.ToList<IComment>(); set => new NotImplementedException();}
+    public override List<IComment> Comments { get => CommentsDbM?.ToList<IComment>(); set => new NotImplementedException();}
     #endregion
     
     #region implementing IEquatable
