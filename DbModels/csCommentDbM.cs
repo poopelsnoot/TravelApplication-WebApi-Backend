@@ -46,9 +46,7 @@ public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csComment
     }
     #endregion
 
-    #region Implementing IEquatable
-
-    #endregion
+    
 }
 
 

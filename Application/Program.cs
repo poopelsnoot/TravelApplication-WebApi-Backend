@@ -2,6 +2,7 @@ using Models;
 using Services;
 using Configuration;
 using System.Runtime.InteropServices;
+using DbRepos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,11 @@ builder.Services.AddSwaggerGen();
 #endregion
 
 #region Dependency Inject
+builder.Services.AddScoped<ISeedRepo, csSeedRepo>();
+builder.Services.AddScoped<IAttractionRepo, csAttractionRepo>();
+builder.Services.AddScoped<ICommentRepo, csCommentRepo>();
+builder.Services.AddScoped<IUserRepo, csUserRepo>();
+
 builder.Services.AddScoped<IAttractionService, csAttractionServiceDb>();
 builder.Services.AddScoped<ISeedService, csSeedServiceDb>();
 builder.Services.AddScoped<ICommentService, csCommentServiceDb>();

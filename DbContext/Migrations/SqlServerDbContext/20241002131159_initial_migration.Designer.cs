@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbContext.Migrations.SqlServerDbContext
 {
     [DbContext(typeof(csMainDbContext.SqlServerDbContext))]
-    [Migration("20240926133000_initial_migration")]
+    [Migration("20241002131159_initial_migration")]
     partial class initial_migration
     {
         /// <inheritdoc />
@@ -153,7 +153,7 @@ namespace DbContext.Migrations.SqlServerDbContext
             modelBuilder.Entity("DbModels.csCommentDbM", b =>
                 {
                     b.HasOne("DbModels.csAttractionDbM", "AttractionDbM")
-                        .WithMany("CommentDbM")
+                        .WithMany("CommentsDbM")
                         .HasForeignKey("AttractionDbMAttractionId");
 
                     b.HasOne("DbModels.csUserDbM", "UserDbM")
@@ -172,7 +172,7 @@ namespace DbContext.Migrations.SqlServerDbContext
 
             modelBuilder.Entity("DbModels.csAttractionDbM", b =>
                 {
-                    b.Navigation("CommentDbM");
+                    b.Navigation("CommentsDbM");
                 });
 
             modelBuilder.Entity("DbModels.csUserDbM", b =>

@@ -24,19 +24,83 @@ namespace AppWebbApi.Controllers
         [ActionName("ReadAttractions")]
         [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
         [ProducesResponseType(400, Type = typeof(string))]
-        public async Task<IActionResult> ReadAttractions(string count = "5")
+        public async Task<IActionResult> ReadAttractions(string count = "5", string category = "", string attractionName = "", string description = "", string country = "", string city = "")
         {
             try
             {
-                _logger.LogInformation("Endpoint ListAttraction executed");
+                _logger.LogInformation("Endpoint ReadAttractions executed");
                 int _count = int.Parse(count);
-                var attractons = _service.ReadAttractions(_count);
+                var attractons = _service.ReadAttractions(_count, category, attractionName, description, country, city);
                 
                 return Ok(attractons);
             }
             catch (Exception ex)
             {
-                _logger.LogError("Endpoint ListAttraction error");
+                _logger.LogError("Endpoint ReadAttractions error");
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpGet()]
+        [ActionName("ReadAttraction")]
+        [ProducesResponseType(200, Type = typeof(IAttraction))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadAttraction(string AttractionId)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ReadAttraction executed");
+                var id = Guid.Parse(AttractionId);
+                var attracton = _service.ReadAttraction(id);
+                
+                return Ok(attracton);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ReadAttraction error");
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpGet()]
+        [ActionName("ReadAttractionsByCity")]
+        [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadAttractionsByCity(string city)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ReadAttractionsByCity executed");
+                var attractons = _service.ReadAttractionsByCity(city);
+                
+                return Ok(attractons);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ReadAttractionsByCity error");
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpGet()]
+        [ActionName("ReadAttractionsWithoutComments")]
+        [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadAttractionsWithoutComments()
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ReadAttractionsWithoutComments executed");
+                var attractons = _service.ReadAttractionsWithoutComments();
+                
+                return Ok(attractons);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ReadAttractionsWithoutComments error");
                 return BadRequest(ex.Message);
             }
             

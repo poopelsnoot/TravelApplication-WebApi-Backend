@@ -21,27 +21,27 @@ namespace AppWebbApi.Controllers
         private ILogger<csCommentController> _logger = null;
         private ICommentService _service = null;
         
-        // [HttpGet()]
-        // [ActionName("Attractions")]
-        // [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
-        // [ProducesResponseType(400, Type = typeof(string))]
-        // public async Task<IActionResult> ListAttractions(string count = "5")
-        // {
-        //     try
-        //     {
-        //         _logger.LogInformation("Endpoint ListAttraction executed");
-        //         int _count = int.Parse(count);
-        //         var attractons = _service.ListAttractions(_count);
+        [HttpGet()]
+        [ActionName("ReadComments")]
+        [ProducesResponseType(200, Type = typeof(List<IComment>))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadComments(string attractionId)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ListAttraction executed");
+                Guid _id = Guid.Parse(attractionId);
+                var comments = _service.ReadComments(_id);
                 
-        //         return Ok(attractons);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         _logger.LogError("Endpoint ListAttraction error");
-        //         return BadRequest(ex.Message);
-        //     }
+                return Ok(comments);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ListAttraction error");
+                return BadRequest(ex.Message);
+            }
             
-        // }
+        }
     
         public csCommentController(ICommentService service, ILogger<csCommentController> logger)
         {

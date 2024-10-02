@@ -19,7 +19,7 @@ public class csUserDbM : csUser, ISeed<csUserDbM>, IEquatable<csUserDbM>
     [Required]
     public override int Age { get; set; }
 
-     #region fixing interface error
+    #region fixing interface error
     [JsonIgnore]
     public virtual List<csCommentDbM> CommentDbM { get; set; } = null;
     [NotMapped]

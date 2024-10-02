@@ -4,44 +4,30 @@ using DbModels;
 using Seido.Utilities.SeedGenerator;
 using Configuration;
 using DbContext;
+using Microsoft.EntityFrameworkCore;
+using DbRepos;
 
 namespace Services;
 
 
 public class csAttractionServiceDb : IAttractionService
 {
-    public List<IAttraction> ReadAttractions(int _count)
+    private IAttractionRepo _repo = null;
+    public List<IAttraction> ReadAttractions(int _count, string _category, string _attractionName, string _description, string _country, string _city) 
+    => _repo.ReadAttractions(_count, _category, _attractionName, _description, _country, _city);
+ 
+
+    public IAttraction ReadAttraction(Guid _id) => _repo.ReadAttraction(_id);
+
+    public List<IAttraction> ReadAttractionsByCity(string _city) => _repo.ReadAttractionsByCity(_city);
+    public List<IAttraction> ReadAttractionsWithoutComments() => _repo.ReadAttractionsWithoutComments();
+    public IAttraction AddAttraction() => _repo.AddAttraction();
+    public IAttraction UpdateAttraction(Guid _id) => _repo.UpdateAttraction(_id);
+    public IAttraction RemoveAttraction(Guid _id) => _repo?.RemoveAttraction(_id);
+
+    public csAttractionServiceDb(IAttractionRepo repo)
     {
-        using (var db = csMainDbContext.DbContext("sysadmin"))
-        {
-            var attractions = db.Attractions.Take(_count).ToList<IAttraction>();
-            return attractions;
-        }
-        
-        // var _seeder = new csSeedGenerator();
-        // var Attractions = _seeder.ItemsToList<csAttraction>(_count);
-
-        // foreach (var attraction in Attractions){
-
-        //     attraction.Address = new csAddress().Seed(_seeder);
-
-        //     attraction.Comments = _seeder.ItemsToList<csComment>(3).ToList<IComment>();
-        //     foreach (var comment in attraction.Comments)
-        //     {
-        //         var _user = new csUser().Seed(_seeder);
-        //         comment.User = _user;
-        //     }
-            
-        // }
-
-        // return Attractions;
+        _repo = repo;
     }
-
-    public IAttraction ReadAttraction(Guid _id) => throw new NotImplementedException();
-    public List<IAttraction> ReadAttractionsByCity(string _city) => throw new NotImplementedException();
-    public List<IAttraction> ReadAttractionsWithoutComments() => throw new NotImplementedException();
-    public IAttraction AddAttraction() => throw new NotImplementedException();
-    public IAttraction UpdateAttraction(Guid _id) => throw new NotImplementedException();
-    public IAttraction RemoveAttraction(Guid _id) => throw new NotImplementedException();
 
 }

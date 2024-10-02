@@ -150,7 +150,7 @@ namespace DbContext.Migrations.SqlServerDbContext
             modelBuilder.Entity("DbModels.csCommentDbM", b =>
                 {
                     b.HasOne("DbModels.csAttractionDbM", "AttractionDbM")
-                        .WithMany("CommentDbM")
+                        .WithMany("CommentsDbM")
                         .HasForeignKey("AttractionDbMAttractionId");
 
                     b.HasOne("DbModels.csUserDbM", "UserDbM")
@@ -169,7 +169,7 @@ namespace DbContext.Migrations.SqlServerDbContext
 
             modelBuilder.Entity("DbModels.csAttractionDbM", b =>
                 {
-                    b.Navigation("CommentDbM");
+                    b.Navigation("CommentsDbM");
                 });
 
             modelBuilder.Entity("DbModels.csUserDbM", b =>

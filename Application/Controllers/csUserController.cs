@@ -21,27 +21,27 @@ namespace AppWebbApi.Controllers
         private ILogger<csUserController> _logger = null;
         private IUserService _service = null;
         
-        // [HttpGet()]
-        // [ActionName("Attractions")]
-        // [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
-        // [ProducesResponseType(400, Type = typeof(string))]
-        // public async Task<IActionResult> ListAttractions(string count = "5")
-        // {
-        //     try
-        //     {
-        //         _logger.LogInformation("Endpoint ListAttraction executed");
-        //         int _count = int.Parse(count);
-        //         var attractons = _service.ListAttractions(_count);
+        [HttpGet()]
+        [ActionName("ReadUsers")]
+        [ProducesResponseType(200, Type = typeof(List<IUser>))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadUsers(string _count)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ReadUsers executed");
+                int count = int.Parse(_count);
+                var users = _service.ReadUsers(count);
                 
-        //         return Ok(attractons);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         _logger.LogError("Endpoint ListAttraction error");
-        //         return BadRequest(ex.Message);
-        //     }
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ReadUsers error");
+                return BadRequest(ex.Message);
+            }
             
-        // }
+        }
     
         public csUserController(IUserService service, ILogger<csUserController> logger)
         {

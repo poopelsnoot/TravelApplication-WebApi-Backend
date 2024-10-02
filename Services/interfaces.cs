@@ -12,7 +12,7 @@ public interface ISeedService{
 
 public interface IAttractionService{
 
-    public List<IAttraction> ReadAttractions(int _count); //string _category, string _attractionName, string _description, string _country, string _city
+    public List<IAttraction> ReadAttractions(int _count, string _category, string _attractionName, string _description, string _country, string _city);
     public IAttraction ReadAttraction(Guid _id);
     public List<IAttraction> ReadAttractionsByCity(string _city);
     public List<IAttraction> ReadAttractionsWithoutComments();
@@ -23,7 +23,7 @@ public interface IAttractionService{
 }
 
 public interface IUserService{
-    public List<IUser> ReadUsers();
+    public List<IUser> ReadUsers(int _count);
     public IUser AddUser();
     public IUser RemoveUser(Guid _id);
 }

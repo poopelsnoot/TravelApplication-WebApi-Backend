@@ -45,7 +45,4 @@ public class csAddressDbM : csAddress, ISeed<csAddressDbM>, IEquatable<csAddress
     }
     #endregion
     
-    #region Implementing IEquatable
-
-    #endregion
 }

@@ -46,8 +46,4 @@ public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<
         return this;
     }
     #endregion
-
-    #region Implementing IEquatable
-    
-    #endregion
 }
