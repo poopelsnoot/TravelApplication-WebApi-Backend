@@ -1,12 +1,11 @@
 using Seido.Utilities.SeedGenerator;
-
 using Models;
-
+using Models.DTO;
 
 namespace Services;
 public interface ISeedService{
-    public void SeedTestdata();
-    public void RemoveAllTestdata();
+    public Task<adminInfoDbDto> SeedTestdata();
+    public Task<adminInfoDbDto> RemoveAllTestdata(bool seeded);
 
 }
 

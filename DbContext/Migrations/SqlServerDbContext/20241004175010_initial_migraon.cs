@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DbContext.Migrations.SqlServerDbContext
 {
     /// <inheritdoc />
-    public partial class initial_migration : Migration
+    public partial class initial_migraon : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -50,17 +50,18 @@ namespace DbContext.Migrations.SqlServerDbContext
                     AttractionName = table.Column<string>(type: "nvarchar(200)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(200)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(200)", nullable: false),
-                    AddressDbMAddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Seeded = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Attractions", x => x.AttractionId);
                     table.ForeignKey(
-                        name: "FK_Attractions_Addresses_AddressDbMAddressId",
-                        column: x => x.AddressDbMAddressId,
+                        name: "FK_Attractions_Addresses_AddressId",
+                        column: x => x.AddressId,
                         principalTable: "Addresses",
-                        principalColumn: "AddressId");
+                        principalColumn: "AddressId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,39 +71,64 @@ namespace DbContext.Migrations.SqlServerDbContext
                     CommentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Comment = table.Column<string>(type: "nvarchar(200)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AttractionDbMAttractionId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    UserDbMUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AttractionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Seeded = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.CommentId);
                     table.ForeignKey(
-                        name: "FK_Comments_Attractions_AttractionDbMAttractionId",
-                        column: x => x.AttractionDbMAttractionId,
+                        name: "FK_Comments_Attractions_AttractionId",
+                        column: x => x.AttractionId,
                         principalTable: "Attractions",
-                        principalColumn: "AttractionId");
+                        principalColumn: "AttractionId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Comments_Users_UserDbMUserId",
-                        column: x => x.UserDbMUserId,
+                        name: "FK_Comments_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "UserId");
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Attractions_AddressDbMAddressId",
+                name: "IX_Addresses_Street_Zip_City_Country",
+                table: "Addresses",
+                columns: new[] { "Street", "Zip", "City", "Country" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Attractions_AddressId",
                 table: "Attractions",
-                column: "AddressDbMAddressId");
+                column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_AttractionDbMAttractionId",
-                table: "Comments",
-                column: "AttractionDbMAttractionId");
+                name: "IX_Attractions_AttractionName_Category_Description",
+                table: "Attractions",
+                columns: new[] { "AttractionName", "Category", "Description" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_UserDbMUserId",
+                name: "IX_Comments_AttractionId",
                 table: "Comments",
-                column: "UserDbMUserId");
+                column: "AttractionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_Comment_Date",
+                table: "Comments",
+                columns: new[] { "Comment", "Date" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_UserId",
+                table: "Comments",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_FirstName_LastName_Age",
+                table: "Users",
+                columns: new[] { "FirstName", "LastName", "Age" },
+                unique: true);
         }
 
         /// <inheritdoc />

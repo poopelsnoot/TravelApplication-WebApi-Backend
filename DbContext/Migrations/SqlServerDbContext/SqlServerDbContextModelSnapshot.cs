@@ -48,6 +48,9 @@ namespace DbContext.Migrations.SqlServerDbContext
 
                     b.HasKey("AddressId");
 
+                    b.HasIndex("Street", "Zip", "City", "Country")
+                        .IsUnique();
+
                     b.ToTable("Addresses");
                 });
 
@@ -57,7 +60,7 @@ namespace DbContext.Migrations.SqlServerDbContext
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AddressDbMAddressId")
+                    b.Property<Guid>("AddressId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AttractionName")
@@ -77,7 +80,10 @@ namespace DbContext.Migrations.SqlServerDbContext
 
                     b.HasKey("AttractionId");
 
-                    b.HasIndex("AddressDbMAddressId");
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("AttractionName", "Category", "Description")
+                        .IsUnique();
 
                     b.ToTable("Attractions");
                 });
@@ -88,7 +94,7 @@ namespace DbContext.Migrations.SqlServerDbContext
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AttractionDbMAttractionId")
+                    b.Property<Guid>("AttractionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Comment")
@@ -101,14 +107,16 @@ namespace DbContext.Migrations.SqlServerDbContext
                     b.Property<bool>("Seeded")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("UserDbMUserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("CommentId");
 
-                    b.HasIndex("AttractionDbMAttractionId");
+                    b.HasIndex("AttractionId");
 
-                    b.HasIndex("UserDbMUserId");
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("Comment", "Date");
 
                     b.ToTable("Comments");
                 });
@@ -135,6 +143,9 @@ namespace DbContext.Migrations.SqlServerDbContext
 
                     b.HasKey("UserId");
 
+                    b.HasIndex("FirstName", "LastName", "Age")
+                        .IsUnique();
+
                     b.ToTable("Users");
                 });
 
@@ -142,7 +153,9 @@ namespace DbContext.Migrations.SqlServerDbContext
                 {
                     b.HasOne("DbModels.csAddressDbM", "AddressDbM")
                         .WithMany("AttractionsDbM")
-                        .HasForeignKey("AddressDbMAddressId");
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AddressDbM");
                 });
@@ -151,11 +164,15 @@ namespace DbContext.Migrations.SqlServerDbContext
                 {
                     b.HasOne("DbModels.csAttractionDbM", "AttractionDbM")
                         .WithMany("CommentsDbM")
-                        .HasForeignKey("AttractionDbMAttractionId");
+                        .HasForeignKey("AttractionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("DbModels.csUserDbM", "UserDbM")
                         .WithMany("CommentDbM")
-                        .HasForeignKey("UserDbMUserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AttractionDbM");
 

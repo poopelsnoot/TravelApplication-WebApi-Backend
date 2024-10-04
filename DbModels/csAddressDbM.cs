@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-
-//using Newtonsoft.Json;
+//using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 using Models;
 using Seido.Utilities.SeedGenerator;
 
 namespace DbModels;
+//unique index
+[Index(nameof(Street),nameof(Zip), nameof(City), nameof(Country), IsUnique = true)]
 public class csAddressDbM : csAddress, ISeed<csAddressDbM>, IEquatable<csAddressDbM>
 {
     //primary key

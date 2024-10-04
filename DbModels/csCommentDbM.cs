@@ -1,12 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-//using Newtonsoft.Json;
+//using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 using Models;
 using Seido.Utilities.SeedGenerator;
 namespace DbModels;
-
+[Index(nameof(Comment), nameof(Date))] //index without isunique because technically people can write identical comments at the same time 
 public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csCommentDbM>
 {
     //primary key
@@ -17,13 +18,23 @@ public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csComment
     [Required]
     public override DateTime Date {get; set; }
 
+    //foreign key property
+    [JsonIgnore]
+    public virtual Guid UserId { get; set; }
+
+    //foreign key property
+    [JsonIgnore]
+    public virtual Guid AttractionId { get; set; }
+
     #region fixing interface error
     [JsonIgnore]
+    [ForeignKey("AttractionId")] //foreign key annotation
     public virtual csAttractionDbM AttractionDbM { get; set; } = null;
     [NotMapped]
     public override IAttraction Attraction { get => AttractionDbM; set => new NotImplementedException();}
 
     [JsonIgnore]
+    [ForeignKey("UserId")] //foreign key annotation
     public virtual csUserDbM UserDbM { get; set; } = null;
     [NotMapped]
     public override IUser User { get => UserDbM; set => new NotImplementedException();}

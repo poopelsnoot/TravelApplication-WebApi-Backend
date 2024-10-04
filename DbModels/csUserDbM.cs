@@ -1,12 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-//using Newtonsoft.Json;
+//using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 using Models;
 using Seido.Utilities.SeedGenerator;
 namespace DbModels;
-
+[Index(nameof(FirstName),nameof(LastName), nameof(Age), IsUnique = true)] // could not be unique, in this case i decide it is
 public class csUserDbM : csUser, ISeed<csUserDbM>, IEquatable<csUserDbM>
 {
     //primary key

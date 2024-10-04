@@ -1,5 +1,4 @@
 using Configuration;
-using System.ComponentModel.DataAnnotations;
 using Seido.Utilities.SeedGenerator;
 namespace Models;
 

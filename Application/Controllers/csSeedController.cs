@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Seido.Utilities.SeedGenerator;
+using Models.DTO;
 
 using Models;
 using Services;
@@ -22,20 +23,41 @@ namespace AppWebbApi.Controllers
         
         [HttpGet()]
         [ActionName("SeedTestdata")]
-        [ProducesResponseType(200, Type = typeof(string))]
+        [ProducesResponseType(200, Type = typeof(adminInfoDbDto))]
         [ProducesResponseType(400, Type = typeof(string))]
         public async Task<IActionResult> SeedTestdata()
         {
             try
             {
                 _logger.LogInformation("Endpoint SeedTestdata executed");
-                _service.SeedTestdata();
+                adminInfoDbDto _info = await _service.SeedTestdata();
                 
-                return Ok("Seeded");
+                return Ok(_info);
             }
             catch (Exception ex)
             {
                 _logger.LogError("Endpoint SeedTestdata error");
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpGet()]
+        [ActionName("RemoveAllTestdata")]
+        [ProducesResponseType(200, Type = typeof(adminInfoDbDto))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> RemoveAllTestdata()
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint RemoveAllTestdata executed");
+                adminInfoDbDto _info = await _service.RemoveAllTestdata(true);
+                
+                return Ok(_info);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint RemoveAllTestdata error");
                 return BadRequest(ex.Message);
             }
             

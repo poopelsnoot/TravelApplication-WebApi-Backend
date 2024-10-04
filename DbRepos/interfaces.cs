@@ -1,11 +1,12 @@
 using DbModels;
 using Models;
+using Models.DTO;
 namespace DbRepos;
 
 public interface ISeedRepo
 {
-    public void SeedTestdata();
-    public void RemoveAllTestdata();
+    public Task<adminInfoDbDto> SeedTestdata();
+    public Task<adminInfoDbDto> RemoveAllTestdata(bool seeded);
 }
 
 public interface IAttractionRepo 

@@ -7,6 +7,7 @@ using DbContext;
 using Microsoft.EntityFrameworkCore;
 using DbRepos;
 using Microsoft.IdentityModel.Tokens;
+using Models.DTO;
 
 namespace Services;
 
@@ -15,8 +16,8 @@ public class csSeedServiceDb : ISeedService
 {
     private ISeedRepo _repo = null;
 
-    public void SeedTestdata() => _repo.SeedTestdata();
-    public void RemoveAllTestdata() => _repo.RemoveAllTestdata();
+    public Task<adminInfoDbDto> SeedTestdata() => _repo.SeedTestdata();
+    public Task<adminInfoDbDto> RemoveAllTestdata(bool seeded) => _repo.RemoveAllTestdata(true);
 
     public csSeedServiceDb(ISeedRepo repo)
     {

@@ -1,12 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-//using Newtonsoft.Json;
-
+//using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Models;
 using Seido.Utilities.SeedGenerator;
-namespace DbModels;
 
+namespace DbModels;
+[Index(nameof(AttractionName),nameof(Category), nameof(Description), IsUnique = true)] //added isunique to not have multiple identical attractions
 public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<csAttractionDbM>
 {
     //primary key
@@ -18,9 +19,13 @@ public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<
     public override string Category { get; set; }
     [Required]
     public override string Description { get; set;}
+    //foreign key property
+    [JsonIgnore]
+    public virtual Guid AddressId { get; set; }
 
     #region fixing interface error
     [JsonIgnore]
+    [ForeignKey("AddressId")] //foreign key annotation
     public virtual csAddressDbM AddressDbM { get; set; } = null;
     [NotMapped]
     public override IAddress Address { get => AddressDbM; set => new NotImplementedException();}

@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-
 using Configuration;
 using Models;
 using DbModels;
@@ -15,6 +14,7 @@ public class csAttractionRepo : IAttractionRepo
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
             var attractions = db.Attractions.Include(a => a.AddressDbM)
+            .Include(a => a.CommentsDbM)
             .Where(a => a.Category.ToLower().Contains(_category))
             .Where(a => a.AttractionName.ToLower().Contains(_attractionName))
             .Where(a => a.Description.ToLower().Contains(_description))

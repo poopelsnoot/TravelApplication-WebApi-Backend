@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-
 using Configuration;
 using Models;
 using DbModels;
 using DbContext;
 using Seido.Utilities.SeedGenerator;
+using Microsoft.Extensions.Logging;
+using Models.DTO;
 
 namespace DbRepos;
 
@@ -12,13 +13,15 @@ public class csSeedRepo : ISeedRepo
 {
 
     //seed 1000 attractions with 0-20 comments each
-    public void SeedTestdata()
+    public async Task<adminInfoDbDto> SeedTestdata()
     {
-        var _seeder = new csSeedGenerator();
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
+            await RemoveAllTestdata(true);
+            var _seeder = new csSeedGenerator();
+
             //attractions to list
-            var _attractions = _seeder.ItemsToList<csAttractionDbM>(1000);
+            var _attractions = _seeder.ItemsToList<csAttractionDbM>(100);
             //users to list
             var _users = _seeder.ItemsToList<csUserDbM>(50);
             
@@ -34,13 +37,37 @@ public class csSeedRepo : ISeedRepo
                 }
 
             }
-
             db.Attractions.AddRange(_attractions);
-            db.SaveChanges();
+
+            int nrSeededAttractions = db.ChangeTracker.Entries().Count(
+            entry => (entry.Entity is csAttractionDbM) && entry.State == EntityState.Added);
+
+            var _info = new adminInfoDbDto();
+            _info.nrSeededAttractions = nrSeededAttractions;
+            
+            await db.SaveChangesAsync();
+            return _info;
         }
         
     }
 
-    public void RemoveAllTestdata() => throw new NotImplementedException();
+    public async Task<adminInfoDbDto> RemoveAllTestdata(bool seeded) 
+    {
+        using (var db = csMainDbContext.DbContext("sysadmin"))
+        {
+            db.Attractions.RemoveRange(db.Attractions.Where(a => a.Seeded == seeded));
+
+            int nrSeededAttractions = db.ChangeTracker.Entries().Count(
+            entry => (entry.Entity is csAttractionDbM) && entry.State == EntityState.Deleted);
+
+            var _info = new adminInfoDbDto();
+            _info.nrSeededAttractions = nrSeededAttractions;
+
+            await db.SaveChangesAsync();
+
+            return _info;
+        }
+    }
+
 
 }
