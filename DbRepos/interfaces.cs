@@ -5,8 +5,8 @@ namespace DbRepos;
 
 public interface ISeedRepo
 {
-    public Task<adminInfoDbDto> SeedTestdata();
-    public Task<adminInfoDbDto> RemoveAllTestdata(bool seeded);
+    public adminInfoDbDto SeedTestdata();
+    public adminInfoDbDto RemoveAllTestdata(bool seeded);
 }
 
 public interface IAttractionRepo 

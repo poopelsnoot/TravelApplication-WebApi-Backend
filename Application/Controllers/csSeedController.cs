@@ -30,7 +30,7 @@ namespace AppWebbApi.Controllers
             try
             {
                 _logger.LogInformation("Endpoint SeedTestdata executed");
-                adminInfoDbDto _info = await _service.SeedTestdata();
+                adminInfoDbDto _info = _service.SeedTestdata();
                 
                 return Ok(_info);
             }
@@ -51,7 +51,7 @@ namespace AppWebbApi.Controllers
             try
             {
                 _logger.LogInformation("Endpoint RemoveAllTestdata executed");
-                adminInfoDbDto _info = await _service.RemoveAllTestdata(true);
+                adminInfoDbDto _info = _service.RemoveAllTestdata(true);
                 
                 return Ok(_info);
             }

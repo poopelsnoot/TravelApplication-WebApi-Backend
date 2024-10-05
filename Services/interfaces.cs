@@ -4,8 +4,8 @@ using Models.DTO;
 
 namespace Services;
 public interface ISeedService{
-    public Task<adminInfoDbDto> SeedTestdata();
-    public Task<adminInfoDbDto> RemoveAllTestdata(bool seeded);
+    public adminInfoDbDto SeedTestdata();
+    public adminInfoDbDto RemoveAllTestdata(bool seeded);
 
 }
 

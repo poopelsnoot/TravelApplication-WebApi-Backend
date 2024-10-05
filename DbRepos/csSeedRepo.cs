@@ -6,6 +6,7 @@ using DbContext;
 using Seido.Utilities.SeedGenerator;
 using Microsoft.Extensions.Logging;
 using Models.DTO;
+using System.Data;
 
 namespace DbRepos;
 
@@ -13,15 +14,15 @@ public class csSeedRepo : ISeedRepo
 {
 
     //seed 1000 attractions with 0-20 comments each
-    public async Task<adminInfoDbDto> SeedTestdata()
+    public adminInfoDbDto SeedTestdata()
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            await RemoveAllTestdata(true);
+            RemoveAllTestdata(true);
             var _seeder = new csSeedGenerator();
 
-            //attractions to list
-            var _attractions = _seeder.ItemsToList<csAttractionDbM>(100);
+            //attractions to list. Works good with 100, but i get error when i try with 1000
+            var _attractions = _seeder.ItemsToList<csAttractionDbM>(100); 
             //users to list
             var _users = _seeder.ItemsToList<csUserDbM>(50);
             
@@ -45,25 +46,27 @@ public class csSeedRepo : ISeedRepo
             var _info = new adminInfoDbDto();
             _info.nrSeededAttractions = nrSeededAttractions;
             
-            await db.SaveChangesAsync();
+            db.SaveChanges();
             return _info;
         }
         
     }
 
-    public async Task<adminInfoDbDto> RemoveAllTestdata(bool seeded) 
+    public adminInfoDbDto RemoveAllTestdata(bool seeded) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
             db.Attractions.RemoveRange(db.Attractions.Where(a => a.Seeded == seeded));
+            db.Comments.RemoveRange(db.Comments.Where(c => c.Seeded == seeded));
+            db.Users.RemoveRange(db.Users.Where(u => u.Seeded == seeded));
+            db.Addresses.RemoveRange(db.Addresses.Where(a => a.Seeded == seeded));
 
-            int nrSeededAttractions = db.ChangeTracker.Entries().Count(
-            entry => (entry.Entity is csAttractionDbM) && entry.State == EntityState.Deleted);
+            int nrRemovedAttractions = db.ChangeTracker.Entries().Count(entry => (entry.Entity is csAttractionDbM) && entry.State == EntityState.Deleted);
 
             var _info = new adminInfoDbDto();
-            _info.nrSeededAttractions = nrSeededAttractions;
+            _info.nrRemovedAttractions = nrRemovedAttractions;
 
-            await db.SaveChangesAsync();
+            db.SaveChanges();
 
             return _info;
         }

@@ -5274,11 +5274,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj",
+      "projectUniqueName": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj",
       "projectName": "DbContext",
-      "projectPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj",
+      "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\DbContext.csproj",
       "packagesPath": "C:\\Users\\sofie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\obj\\",
+      "outputPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbContext\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5306,8 +5306,8 @@
             "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbModels\\DbModels.csproj": {
               "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\DbModels\\DbModels.csproj"
             },
-            "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj"
+            "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj": {
+              "projectPath": "c:\\Users\\sofie\\OneDrive\\Bilder\\.NET utveckling\\Dataåtkomster i .NET\\Project\\WebApiProject\\Models\\Models.csproj"
             }
           }
         }
