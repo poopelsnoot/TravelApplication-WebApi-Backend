@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Seido.Utilities.SeedGenerator;
-
+using Models.DTO;
 using Models;
 using Services;
 using Configuration;
@@ -101,6 +101,28 @@ namespace AppWebbApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError("Endpoint ReadAttractionsWithoutComments error");
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpGet()]
+        [ActionName("RemoveAttraction")]
+        [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> RemoveAttraction(string Id)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint RemoveAttraction executed");
+                Guid _id = Guid.Parse(Id);
+                adminInfoDbDto _info = _service.RemoveAttraction(_id);
+                
+                return Ok(_info);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint RemoveAttraction error");
                 return BadRequest(ex.Message);
             }
             

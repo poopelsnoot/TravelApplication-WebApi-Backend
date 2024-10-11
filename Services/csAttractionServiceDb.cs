@@ -6,6 +6,7 @@ using Configuration;
 using DbContext;
 using Microsoft.EntityFrameworkCore;
 using DbRepos;
+using Models.DTO;
 
 namespace Services;
 
@@ -23,7 +24,7 @@ public class csAttractionServiceDb : IAttractionService
     public List<IAttraction> ReadAttractionsWithoutComments() => _repo.ReadAttractionsWithoutComments();
     public IAttraction AddAttraction() => _repo.AddAttraction();
     public IAttraction UpdateAttraction(Guid _id) => _repo.UpdateAttraction(_id);
-    public IAttraction RemoveAttraction(Guid _id) => _repo?.RemoveAttraction(_id);
+    public adminInfoDbDto RemoveAttraction(Guid _id) => _repo?.RemoveAttraction(_id);
 
     public csAttractionServiceDb(IAttractionRepo repo)
     {

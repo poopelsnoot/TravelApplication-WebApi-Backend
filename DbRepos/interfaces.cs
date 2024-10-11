@@ -17,7 +17,7 @@ public interface IAttractionRepo
     public List<IAttraction> ReadAttractionsWithoutComments();
     public IAttraction AddAttraction();
     public IAttraction UpdateAttraction(Guid _id);
-    public IAttraction RemoveAttraction(Guid _id);
+    public adminInfoDbDto RemoveAttraction(Guid _id);
 }
 
 public interface IUserRepo 

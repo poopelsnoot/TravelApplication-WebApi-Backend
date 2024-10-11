@@ -4,6 +4,7 @@ using Models;
 using DbModels;
 using DbContext;
 using Seido.Utilities.SeedGenerator;
+using Models.DTO;
 
 namespace DbRepos;
 
@@ -68,5 +69,20 @@ public class csAttractionRepo : IAttractionRepo
     
     public IAttraction AddAttraction() => throw new NotImplementedException();
     public IAttraction UpdateAttraction(Guid _id) => throw new NotImplementedException();
-    public IAttraction RemoveAttraction(Guid _id) => throw new NotImplementedException();
+    public adminInfoDbDto RemoveAttraction(Guid _id) 
+    {
+        using (var db = csMainDbContext.DbContext("sysadmin"))
+        {
+            db.Attractions.RemoveRange(db.Attractions.Where(a => a.AttractionId == _id));
+            
+            //changeTracker info
+            int nrRemovedAttractions = db.ChangeTracker.Entries().Count(entry => (entry.Entity is csAttractionDbM) && entry.State == EntityState.Deleted);
+            var _info = new adminInfoDbDto();
+            _info.nrRemovedAttractions = nrRemovedAttractions;
+
+            db.SaveChanges();
+
+            return _info;
+        }
+    }
 }
