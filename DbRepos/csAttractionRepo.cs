@@ -13,7 +13,8 @@ public class csAttractionRepo : IAttractionRepo
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            var attractions = db.Attractions.Include(a => a.AddressDbM)
+            var attractions = db.Attractions
+            .Include(a => a.AddressDbM)
             .Include(a => a.CommentsDbM)
             .Where(a => a.Category.ToLower().Contains(_category))
             .Where(a => a.AttractionName.ToLower().Contains(_attractionName))
@@ -30,7 +31,12 @@ public class csAttractionRepo : IAttractionRepo
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            var attraction = db.Attractions.Include(a => a.CommentsDbM).Include(a => a.AddressDbM).Where(a => a.AttractionId == _id).FirstOrDefault();
+            var attraction = db.Attractions
+            .Include(a => a.CommentsDbM)
+            .ThenInclude(c => c.UserDbM)
+            .Include(a => a.AddressDbM)
+            .ThenInclude(addr => addr.AttractionsDbM)
+            .Where(a => a.AttractionId == _id).FirstOrDefault();
                                                                          
             return attraction;
         }
@@ -40,7 +46,10 @@ public class csAttractionRepo : IAttractionRepo
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            var attractions = db.Attractions.Include(a => a.AddressDbM).Where(a => a.AddressDbM.City == _city).ToList<IAttraction>();
+            var attractions = db.Attractions
+            .Include(a => a.AddressDbM)
+            .Where(a => a.AddressDbM.City == _city)
+            .ToList<IAttraction>();
             return attractions; 
         }
     }
@@ -48,7 +57,11 @@ public class csAttractionRepo : IAttractionRepo
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            var attractions = db.Attractions.Include(a => a.CommentsDbM).Where(a => a.CommentsDbM.Count == 0).ToList<IAttraction>();
+            var attractions = db.Attractions
+            .Include(a => a.AddressDbM)
+            .Include(a => a.CommentsDbM)
+            .Where(a => a.CommentsDbM.Count == 0)
+            .ToList<IAttraction>();
             return attractions; 
         }
     }

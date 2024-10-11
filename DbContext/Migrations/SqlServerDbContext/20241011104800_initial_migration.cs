@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DbContext.Migrations.SqlServerDbContext
 {
     /// <inheritdoc />
-    public partial class initial_migraon : Migration
+    public partial class initial_migration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,6 +35,7 @@ namespace DbContext.Migrations.SqlServerDbContext
                     FirstName = table.Column<string>(type: "nvarchar(200)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(200)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(200)", nullable: false),
                     Seeded = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -104,10 +105,9 @@ namespace DbContext.Migrations.SqlServerDbContext
                 column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Attractions_AttractionName_Category_Description",
+                name: "IX_Attractions_AttractionName_Category_Description_AddressId",
                 table: "Attractions",
-                columns: new[] { "AttractionName", "Category", "Description" },
-                unique: true);
+                columns: new[] { "AttractionName", "Category", "Description", "AddressId" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_AttractionId",
@@ -125,9 +125,9 @@ namespace DbContext.Migrations.SqlServerDbContext
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_FirstName_LastName_Age",
+                name: "IX_Users_FirstName_LastName_Age_Email",
                 table: "Users",
-                columns: new[] { "FirstName", "LastName", "Age" },
+                columns: new[] { "FirstName", "LastName", "Age", "Email" },
                 unique: true);
         }
 

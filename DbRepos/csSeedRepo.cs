@@ -40,9 +40,9 @@ public class csSeedRepo : ISeedRepo
             }
             db.Attractions.AddRange(_attractions);
 
+            //changeTracker info
             int nrSeededAttractions = db.ChangeTracker.Entries().Count(
             entry => (entry.Entity is csAttractionDbM) && entry.State == EntityState.Added);
-
             var _info = new adminInfoDbDto();
             _info.nrSeededAttractions = nrSeededAttractions;
             
@@ -61,8 +61,8 @@ public class csSeedRepo : ISeedRepo
             db.Users.RemoveRange(db.Users.Where(u => u.Seeded == seeded));
             db.Addresses.RemoveRange(db.Addresses.Where(a => a.Seeded == seeded));
 
+            //changeTracker info
             int nrRemovedAttractions = db.ChangeTracker.Entries().Count(entry => (entry.Entity is csAttractionDbM) && entry.State == EntityState.Deleted);
-
             var _info = new adminInfoDbDto();
             _info.nrRemovedAttractions = nrRemovedAttractions;
 

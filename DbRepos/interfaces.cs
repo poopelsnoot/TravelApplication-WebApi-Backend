@@ -22,14 +22,14 @@ public interface IAttractionRepo
 
 public interface IUserRepo 
 {
-    public List<IUser> ReadUsers(int _count);
+    public List<IUser> ReadUsers();
     public IUser AddUser();
-    public IUser RemoveUser(Guid _id);
+    public adminInfoDbDto RemoveUser(Guid _id);
 }
 
 public interface ICommentRepo 
 {
     public IComment AddComment();
     public List<IComment> ReadComments(Guid _attractionId);
-    public IComment RemoveComment(Guid _id);
+    public adminInfoDbDto RemoveComment(Guid _id);
 }

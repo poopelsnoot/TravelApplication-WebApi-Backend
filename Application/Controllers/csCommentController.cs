@@ -10,6 +10,7 @@ using Seido.Utilities.SeedGenerator;
 using Models;
 using Services;
 using Configuration;
+using Models.DTO;
 
 namespace AppWebbApi.Controllers
 {
@@ -29,7 +30,7 @@ namespace AppWebbApi.Controllers
         {
             try
             {
-                _logger.LogInformation("Endpoint ListAttraction executed");
+                _logger.LogInformation("Endpoint ReadComments executed");
                 Guid _id = Guid.Parse(attractionId);
                 var comments = _service.ReadComments(_id);
                 
@@ -37,7 +38,29 @@ namespace AppWebbApi.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError("Endpoint ListAttraction error");
+                _logger.LogError("Endpoint ReadComments error");
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpGet()]
+        [ActionName("RemoveComment")]
+        [ProducesResponseType(200, Type = typeof(List<IComment>))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> RemoveComment(string Id)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint RemoveComment executed");
+                Guid _id = Guid.Parse(Id);
+                adminInfoDbDto _info = _service.RemoveComment(_id);
+                
+                return Ok(_info);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint RemoveComment error");
                 return BadRequest(ex.Message);
             }
             

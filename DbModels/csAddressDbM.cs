@@ -9,7 +9,7 @@ using Seido.Utilities.SeedGenerator;
 
 namespace DbModels;
 //unique index
-[Index(nameof(Street),nameof(Zip), nameof(City), nameof(Country), IsUnique = true)]
+[Index(nameof(Street),nameof(Zip), nameof(City), nameof(Country), IsUnique = true)] //is unique because there can not be 2 identical addresses in the same country
 public class csAddressDbM : csAddress, ISeed<csAddressDbM>, IEquatable<csAddressDbM>
 {
     //primary key

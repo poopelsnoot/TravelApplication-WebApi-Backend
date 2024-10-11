@@ -82,8 +82,7 @@ namespace DbContext.Migrations.SqlServerDbContext
 
                     b.HasIndex("AddressId");
 
-                    b.HasIndex("AttractionName", "Category", "Description")
-                        .IsUnique();
+                    b.HasIndex("AttractionName", "Category", "Description", "AddressId");
 
                     b.ToTable("Attractions");
                 });
@@ -130,6 +129,10 @@ namespace DbContext.Migrations.SqlServerDbContext
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(200)");
@@ -143,7 +146,7 @@ namespace DbContext.Migrations.SqlServerDbContext
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("FirstName", "LastName", "Age")
+                    b.HasIndex("FirstName", "LastName", "Age", "Email")
                         .IsUnique();
 
                     b.ToTable("Users");

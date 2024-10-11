@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-
 using Configuration;
 using Models;
 using DbModels;
 using DbContext;
 using Seido.Utilities.SeedGenerator;
+using Models.DTO;
 
 namespace DbRepos;
 
@@ -22,6 +22,21 @@ public class csCommentRepo : ICommentRepo
         }
     }
 
-    public IComment RemoveComment(Guid _id) => throw new NotImplementedException();
+    public adminInfoDbDto RemoveComment(Guid _id) 
+    {
+        using (var db = csMainDbContext.DbContext("sysadmin"))
+        {
+            db.Comments.RemoveRange(db.Comments.Where(c => c.CommentId == _id));
+            
+            //changeTracker info
+            int nrRemovedComments = db.ChangeTracker.Entries().Count(entry => (entry.Entity is csCommentDbM) && entry.State == EntityState.Deleted);
+            var _info = new adminInfoDbDto();
+            _info.nrRemovedComments = nrRemovedComments;
+
+            db.SaveChanges();
+
+            return _info;
+        }
+    }
 
 }

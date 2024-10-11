@@ -7,7 +7,7 @@ using Models;
 using Seido.Utilities.SeedGenerator;
 
 namespace DbModels;
-[Index(nameof(AttractionName),nameof(Category), nameof(Description), IsUnique = true)] //added isunique to not have multiple identical attractions
+[Index(nameof(AttractionName),nameof(Category), nameof(Description), nameof(AddressId))] //added isunique to not have two identical attractions on the same address
 public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<csAttractionDbM>
 {
     //primary key

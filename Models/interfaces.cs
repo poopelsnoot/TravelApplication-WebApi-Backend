@@ -27,7 +27,7 @@ public interface IAddress{
     public string City {get; set;}
     public string Country {get; set;}
 
-    //navigation props
+    //navigation props. One address can have many attractions
     public List<IAttraction> Attractions {get; set;}
 
 }
@@ -51,6 +51,7 @@ public interface IUser{
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public int Age { get; set; }
+    public string Email { get; set; }
 
     //Navigation props
     // One user can have many comments

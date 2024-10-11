@@ -7,7 +7,8 @@ using Newtonsoft.Json;
 using Models;
 using Seido.Utilities.SeedGenerator;
 namespace DbModels;
-[Index(nameof(Comment), nameof(Date))] //index without isunique because technically people can write identical comments at the same time 
+[Index(nameof(Date), nameof(UserId), IsUnique =true)] //is unique because a user can't write multiple comments at the exact same time 
+[Index(nameof(Comment), nameof(Date))] //indexer
 public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csCommentDbM>
 {
     //primary key
