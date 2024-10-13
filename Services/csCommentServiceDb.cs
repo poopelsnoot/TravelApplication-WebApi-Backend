@@ -14,9 +14,11 @@ namespace Services;
 public class csCommentServiceDb : ICommentService
 {
     private ICommentRepo _repo = null;
-    public IComment AddComment() => _repo.AddComment();
     public List<IComment> ReadComments(Guid _attractionId) => _repo.ReadComments(_attractionId);
+    public IComment ReadComment(Guid _commentId) => _repo.ReadComment(_commentId);
+    public IComment AddComment(csCommentCUdto itemDto) => _repo.AddComment(itemDto);
     public adminInfoDbDto RemoveComment(Guid _id) => _repo.RemoveComment(_id);
+
 
     public csCommentServiceDb(ICommentRepo repo)
     {

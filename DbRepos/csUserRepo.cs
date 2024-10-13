@@ -22,7 +22,27 @@ public class csUserRepo : IUserRepo
             return user;
         }
     }
-    public IUser AddUser() => throw new NotImplementedException();
+
+    public IUser ReadUser(Guid _userId) 
+    {
+        using (var db = csMainDbContext.DbContext("sysadmin"))
+        {
+            var user = db.Users
+            .Include(u => u.CommentDbM)
+            .Where(a => a.UserId == _userId).FirstOrDefault();
+                                                                         
+            return user;
+        }
+    }
+
+    public IUser AddUser(csUserCUdto itemDto)
+    {
+        using (var db = csMainDbContext.DbContext("sysadmin"))
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     public adminInfoDbDto RemoveUser(Guid _id)
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
@@ -38,5 +58,26 @@ public class csUserRepo : IUserRepo
 
             return _info;
         }
+    }
+
+    //from all id's in _itemDtoSrc finds the corresponding object in the database and assigns it to _itemDst
+    //Error is thrown if no object is found correspodning to an id.
+    private static void navProp_csUserCUdto_to_csUserDbM(csMainDbContext db, csUserCUdto _itemDtoSrc, csUserDbM _itemDst)
+    {
+        //update CommentsDbM from itemDto.CommentsId list
+        List<csCommentDbM> _Comments = null;
+        if (_itemDtoSrc.CommentsId != null)
+        {
+            _Comments = new List<csCommentDbM>();
+            foreach (var id in _itemDtoSrc.CommentsId)
+            {
+                var c = db.Comments.FirstOrDefault(i => i.CommentId == id);
+                if (c == null)
+                    throw new ArgumentException($"Item id {id} not existing");
+
+                _Comments.Add(c);
+            }
+        }
+        _itemDst.CommentDbM = _Comments;
     }
 }

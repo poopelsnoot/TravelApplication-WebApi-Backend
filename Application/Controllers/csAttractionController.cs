@@ -65,6 +65,33 @@ namespace AppWebbApi.Controllers
         }
 
         [HttpGet()]
+        [ActionName("ReadAttractionDto")]
+        [ProducesResponseType(200, Type = typeof(csAttractionCUdto))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadAttractionDto(string AttractionId = null)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ReadAttractionDto executed");
+                var _id = Guid.Parse(AttractionId);
+                
+                var item = _service.ReadAttraction(_id);
+                if (item == null)
+                {
+                    return BadRequest($"Item with id {AttractionId} does not exist");
+                }
+
+                var dto = new csAttractionCUdto(item);
+                return Ok(dto);          
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ReadAttractionDto error");
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet()]
         [ActionName("ReadAttractionsByCity")]
         [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
         [ProducesResponseType(400, Type = typeof(string))]
@@ -106,7 +133,34 @@ namespace AppWebbApi.Controllers
             
         }
 
-        [HttpGet()]
+        [HttpPut("{id}")]
+        [ActionName("UpdateAttraction")]
+        [ProducesResponseType(200, Type = typeof(csAttractionCUdto))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> UpdateAttraction(string id, [FromBody] csAttractionCUdto item)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint UpdateAttraction executed");
+
+                Guid _id = Guid.Parse(id);
+                if (item.AttractionId != _id)
+                    throw new Exception("Id mismatch");
+
+                var _item = _service.UpdateAttraction(item);
+                _logger.LogInformation($"item {_id} updated");
+                
+                return Ok(_item);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint UpdateAttraction error");
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpDelete()]
         [ActionName("RemoveAttraction")]
         [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
         [ProducesResponseType(400, Type = typeof(string))]

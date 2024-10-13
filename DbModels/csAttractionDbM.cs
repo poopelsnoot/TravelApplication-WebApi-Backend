@@ -5,9 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Models;
 using Seido.Utilities.SeedGenerator;
+using Models.DTO;
 
 namespace DbModels;
-[Index(nameof(AttractionName),nameof(Category), nameof(Description), nameof(AddressId))] //added isunique to not have two identical attractions on the same address
+[Index(nameof(AttractionName),nameof(Category), nameof(Description), nameof(AddressId), IsUnique =true)] //added isunique to not have two identical attractions on the same address
 public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<csAttractionDbM>
 {
     //primary key
@@ -51,4 +52,26 @@ public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<
         return this;
     }
     #endregion
+
+    #region Update from DTO
+    public csAttractionDbM UpdateFromDTO(csAttractionCUdto org)
+    {
+        AttractionName = org.AttractionName;
+        Category = org.Category;
+        Description = org.Description;
+
+        return this;
+    }
+    #endregion
+
+    #region constructors
+    public csAttractionDbM() { }
+    public csAttractionDbM(csAttractionCUdto org)
+    {
+        AttractionId = Guid.NewGuid();
+        UpdateFromDTO(org);
+    }
+    #endregion
+
+
 }

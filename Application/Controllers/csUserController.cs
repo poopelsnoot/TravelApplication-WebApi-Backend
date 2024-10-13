@@ -42,6 +42,33 @@ namespace AppWebbApi.Controllers
         }
 
         [HttpGet()]
+        [ActionName("ReadUserDto")]
+        [ProducesResponseType(200, Type = typeof(csUserCUdto))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadUserDto(string UserId = null)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ReadUserDto executed");
+                var _id = Guid.Parse(UserId);
+                
+                var item = _service.ReadUser(_id);
+                if (item == null)
+                {
+                    return BadRequest($"Item with id {UserId} does not exist");
+                }
+
+                var dto = new csUserCUdto(item);
+                return Ok(dto);          
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ReadUserDto error");
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete()]
         [ActionName("RemoveUser")]
         [ProducesResponseType(200, Type = typeof(List<IUser>))]
         [ProducesResponseType(400, Type = typeof(string))]

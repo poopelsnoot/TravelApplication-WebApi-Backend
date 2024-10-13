@@ -16,7 +16,7 @@ public class csSeedServiceDb : ISeedService
 {
     private ISeedRepo _repo = null;
 
-    public adminInfoDbDto SeedTestdata() => _repo.SeedTestdata();
+    public adminInfoDbDto SeedTestdata(int _count) => _repo.SeedTestdata(_count);
     public adminInfoDbDto RemoveAllTestdata(bool seeded) => _repo.RemoveAllTestdata(true);
 
     public csSeedServiceDb(ISeedRepo repo)

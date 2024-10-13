@@ -13,16 +13,16 @@ namespace DbRepos;
 public class csSeedRepo : ISeedRepo
 {
 
-    //seed 1000 attractions with 0-20 comments each
-    public adminInfoDbDto SeedTestdata()
+    //seed default 1000 attractions with 0-20 comments each
+    public adminInfoDbDto SeedTestdata(int _count)
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
             RemoveAllTestdata(true);
             var _seeder = new csSeedGenerator();
 
-            //attractions to list. Works good with 100, but i get error when i try with 1000
-            var _attractions = _seeder.ItemsToList<csAttractionDbM>(1000); 
+            //attractions to list
+            var _attractions = _seeder.ItemsToList<csAttractionDbM>(_count); 
             //users to list
             var _users = _seeder.ItemsToList<csUserDbM>(50);
             
@@ -32,14 +32,11 @@ public class csSeedRepo : ISeedRepo
                 attraction.CommentsDbM = _seeder.ItemsToList<csCommentDbM>(_seeder.Next(0, 21));
 
                 //add user to comment
-                // foreach (var comment in attraction.CommentsDbM)
-                // {
-                //     comment.UserDbM = _seeder.FromList(_users);
-                // }
                 attraction.CommentsDbM.ForEach(c => c.UserDbM = _seeder.FromList(_users));
 
             }
             db.Attractions.AddRange(_attractions);
+            db.Users.AddRange(_users);
 
             //changeTracker info
             int nrSeededAttractions = db.ChangeTracker.Entries().Count(

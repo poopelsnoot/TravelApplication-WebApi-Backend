@@ -5274,11 +5274,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\DbContext\\DbContext.csproj",
+      "projectUniqueName": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\DbContext\\DbContext.csproj",
       "projectName": "DbContext",
-      "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\DbContext\\DbContext.csproj",
+      "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\DbContext\\DbContext.csproj",
       "packagesPath": "C:\\Users\\sofie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\DbContext\\obj\\",
+      "outputPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\DbContext\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

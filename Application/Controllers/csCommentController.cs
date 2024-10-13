@@ -45,6 +45,33 @@ namespace AppWebbApi.Controllers
         }
 
         [HttpGet()]
+        [ActionName("ReadCommentDto")]
+        [ProducesResponseType(200, Type = typeof(csCommentCUdto))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> ReadCommentDto(string CommentId = null)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint ReadCommentDto executed");
+                var _id = Guid.Parse(CommentId);
+                
+                var item = _service.ReadComment(_id);
+                if (item == null)
+                {
+                    return BadRequest($"Item with id {CommentId} does not exist");
+                }
+
+                var dto = new csCommentCUdto(item);
+                return Ok(dto);          
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint ReadCommentDto error");
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete()]
         [ActionName("RemoveComment")]
         [ProducesResponseType(200, Type = typeof(List<IComment>))]
         [ProducesResponseType(400, Type = typeof(string))]

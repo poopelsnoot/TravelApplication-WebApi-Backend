@@ -82,7 +82,8 @@ namespace DbContext.Migrations.SqlServerDbContext
 
                     b.HasIndex("AddressId");
 
-                    b.HasIndex("AttractionName", "Category", "Description", "AddressId");
+                    b.HasIndex("AttractionName", "Category", "Description", "AddressId")
+                        .IsUnique();
 
                     b.ToTable("Attractions");
                 });
@@ -116,6 +117,9 @@ namespace DbContext.Migrations.SqlServerDbContext
                     b.HasIndex("UserId");
 
                     b.HasIndex("Comment", "Date");
+
+                    b.HasIndex("Date", "UserId")
+                        .IsUnique();
 
                     b.ToTable("Comments");
                 });

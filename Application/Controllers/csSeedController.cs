@@ -21,16 +21,17 @@ namespace AppWebbApi.Controllers
         private ILogger<csSeedController> _logger = null;
         private ISeedService _service = null;
         
-        [HttpGet()]
+        [HttpPost()]
         [ActionName("SeedTestdata")]
         [ProducesResponseType(200, Type = typeof(adminInfoDbDto))]
         [ProducesResponseType(400, Type = typeof(string))]
-        public async Task<IActionResult> SeedTestdata()
+        public async Task<IActionResult> SeedTestdata(string nrAttractions = "1000")
         {
             try
             {
                 _logger.LogInformation("Endpoint SeedTestdata executed");
-                adminInfoDbDto _info = _service.SeedTestdata();
+                int _count = int.Parse(nrAttractions);
+                adminInfoDbDto _info = _service.SeedTestdata(_count);
                 
                 return Ok(_info);
             }
@@ -42,7 +43,7 @@ namespace AppWebbApi.Controllers
             
         }
 
-        [HttpGet()]
+        [HttpDelete()]
         [ActionName("RemoveAllTestdata")]
         [ProducesResponseType(200, Type = typeof(adminInfoDbDto))]
         [ProducesResponseType(400, Type = typeof(string))]

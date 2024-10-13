@@ -107,7 +107,8 @@ namespace DbContext.Migrations.SqlServerDbContext
             migrationBuilder.CreateIndex(
                 name: "IX_Attractions_AttractionName_Category_Description_AddressId",
                 table: "Attractions",
-                columns: new[] { "AttractionName", "Category", "Description", "AddressId" });
+                columns: new[] { "AttractionName", "Category", "Description", "AddressId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_AttractionId",
@@ -118,6 +119,12 @@ namespace DbContext.Migrations.SqlServerDbContext
                 name: "IX_Comments_Comment_Date",
                 table: "Comments",
                 columns: new[] { "Comment", "Date" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_Date_UserId",
+                table: "Comments",
+                columns: new[] { "Date", "UserId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_UserId",

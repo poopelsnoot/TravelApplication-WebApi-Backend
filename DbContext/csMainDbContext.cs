@@ -73,6 +73,37 @@ public class csMainDbContext : Microsoft.EntityFrameworkCore.DbContext
         #endregion
 
         #region override modelbuilder
+
+        modelBuilder.Entity("DbModels.csAttractionDbM", b =>
+                {
+                    b.HasOne("DbModels.csAddressDbM", "AddressDbM")
+                        .WithMany("AttractionsDbM")
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AddressDbM");
+                });
+                
+        modelBuilder.Entity("DbModels.csCommentDbM", b =>
+                {
+                    b.HasOne("DbModels.csAttractionDbM", "AttractionDbM")
+                        .WithMany("CommentsDbM")
+                        .HasForeignKey("AttractionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DbModels.csUserDbM", "UserDbM")
+                        .WithMany("CommentDbM")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AttractionDbM");
+
+                    b.Navigation("UserDbM");
+                });
+        
         #endregion
         
         base.OnModelCreating(modelBuilder);
