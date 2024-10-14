@@ -10,7 +10,7 @@ public class csComment : ISeed<csComment>, IComment, IEquatable<csComment>
     
     public virtual Guid CommentId { get; set; } 
     public virtual string Comment { get; set; }
-    public virtual DateTime Date {get; set; }
+    public DateTime? Date {get; set; } = null;
     
     
     //navigation props
@@ -34,7 +34,7 @@ public class csComment : ISeed<csComment>, IComment, IEquatable<csComment>
         Seeded = true;
         CommentId = Guid.NewGuid();
         Comment = _seeder.LatinSentence;
-        Date = _seeder.DateAndTime(2022, 2024);
+        Date = (_seeder.Bool) ? _seeder.DateAndTime(2022, 2024) : null;
         
         return this;
     }

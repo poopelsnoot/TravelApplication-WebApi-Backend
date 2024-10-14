@@ -68,6 +68,28 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        [HttpPost()]
+        [ActionName("AddUser")]
+        [ProducesResponseType(200, Type = typeof(IUser))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> AddUser([FromBody] csUserCUdto item)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint AddUser executed");
+
+                var _item = _service.AddUser(item);
+                _logger.LogInformation($"item {_item.UserId} created");
+
+                return Ok(_item);      
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint AddUser error");
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpDelete()]
         [ActionName("RemoveUser")]
         [ProducesResponseType(200, Type = typeof(List<IUser>))]

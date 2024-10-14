@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 //using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-
+using Models.DTO;
 using Models;
 using Seido.Utilities.SeedGenerator;
 namespace DbModels;
@@ -46,4 +46,24 @@ public class csUserDbM : csUser, ISeed<csUserDbM>, IEquatable<csUserDbM>
     }
     #endregion
 
+    #region Update from DTO
+    public csUserDbM UpdateFromDTO(csUserCUdto org)
+    {
+        FirstName = org.FirstName;
+        LastName = org.LastName;
+        Age = org.Age;
+        Email = org.Email;
+
+        return this;
+    }
+    #endregion
+
+    #region constructors
+    public csUserDbM() { }
+    public csUserDbM(csUserCUdto org)
+    {
+        UserId = Guid.NewGuid();
+        UpdateFromDTO(org);
+    }
+    #endregion
 }

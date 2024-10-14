@@ -35,9 +35,26 @@ public class csCommentRepo : ICommentRepo
 
     public IComment AddComment(csCommentCUdto itemDto)
     {
+        if (itemDto.CommentId != null)
+            throw new ArgumentException($"{nameof(itemDto.CommentId)} must be null when creating a new object");
+
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            throw new NotImplementedException();
+            //transfer any changes from DTO to database objects
+            //Update individual properties Comment
+            var _item = new csCommentDbM(itemDto);
+
+            //Update navigation properties
+            navProp_csCommentCUdto_to_csCommentDbM(db, itemDto, _item);
+
+            //write to database model
+            db.Comments.Add(_item);
+
+            //write to database
+            db.SaveChanges();
+            
+            //return the updated item in non-flat mode
+            return ReadComment(_item.CommentId);   
         }
     }
 

@@ -37,7 +37,7 @@ public interface IComment{
     public Guid CommentId { get; set; }
     public string Comment { get; set; }
 
-    public DateTime Date {get; set; }
+    public DateTime? Date {get; set; }
 
     //navigation props
     // Comment has one user

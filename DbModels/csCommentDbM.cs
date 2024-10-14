@@ -3,10 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 //using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-
+using Models.DTO;
 using Models;
 using Seido.Utilities.SeedGenerator;
+
 namespace DbModels;
+
 [Index(nameof(Date), nameof(UserId), IsUnique =true)] //is unique because a user can't write multiple comments at the exact same time 
 [Index(nameof(Comment), nameof(Date))] //indexer
 public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csCommentDbM>
@@ -16,8 +18,6 @@ public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csComment
     public override Guid CommentId { get; set; }
     [Required]
     public override string Comment { get; set; }
-    [Required]
-    public override DateTime Date {get; set; }
 
     //foreign key property
     [JsonIgnore]
@@ -58,7 +58,24 @@ public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csComment
     }
     #endregion
 
-    
+    #region Update from DTO
+    public csCommentDbM UpdateFromDTO(csCommentCUdto org)
+    {
+        Comment = org.Comment;
+        Date = org.Date;
+
+        return this;
+    }
+    #endregion
+
+    #region constructors
+    public csCommentDbM() { }
+    public csCommentDbM(csCommentCUdto org)
+    {
+        CommentId = Guid.NewGuid();
+        UpdateFromDTO(org);
+    }
+    #endregion
 }
 
 

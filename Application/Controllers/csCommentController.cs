@@ -71,6 +71,28 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        [HttpPost()]
+        [ActionName("AddComment")]
+        [ProducesResponseType(200, Type = typeof(IComment))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> AddComment([FromBody] csCommentCUdto item)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint AddComment executed");
+
+                var _item = _service.AddComment(item);
+                _logger.LogInformation($"item {_item.CommentId} created");
+
+                return Ok(_item);      
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint AddComment error");
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpDelete()]
         [ActionName("RemoveComment")]
         [ProducesResponseType(200, Type = typeof(List<IComment>))]

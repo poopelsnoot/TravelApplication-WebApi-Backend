@@ -37,9 +37,26 @@ public class csUserRepo : IUserRepo
 
     public IUser AddUser(csUserCUdto itemDto)
     {
+        if (itemDto.UserId != null)
+            throw new ArgumentException($"{nameof(itemDto.UserId)} must be null when creating a new object");
+
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            throw new NotImplementedException();
+            //transfer any changes from DTO to database objects
+            //Update individual properties User
+            var _item = new csUserDbM(itemDto);
+
+            //Update navigation properties
+            navProp_csUserCUdto_to_csUserDbM(db, itemDto, _item);
+
+            //write to database model
+            db.Users.Add(_item);
+
+            //write to database
+            db.SaveChanges();
+            
+            //return the updated item in non-flat mode
+            return ReadUser(_item.UserId);   
         }
     }
 
