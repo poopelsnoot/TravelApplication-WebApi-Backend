@@ -9,6 +9,7 @@ using Models.DTO;
 using Models;
 using Services;
 using Configuration;
+using DbModels;
 
 namespace AppWebbApi.Controllers
 {
@@ -131,6 +132,28 @@ namespace AppWebbApi.Controllers
                 return BadRequest(ex.Message);
             }
             
+        }
+
+        [HttpPost()]
+        [ActionName("AddAttraction")]
+        [ProducesResponseType(200, Type = typeof(IAttraction))]
+        [ProducesResponseType(400, Type = typeof(string))]
+        public async Task<IActionResult> AddAttraction([FromBody] csAttractionCUdto item)
+        {
+            try
+            {
+                _logger.LogInformation("Endpoint AddAttraction executed");
+
+                var _item = _service.AddAttraction(item);
+                _logger.LogInformation($"item {_item.AttractionId} created");
+
+                return Ok(_item);      
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Endpoint AddAttraction error");
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]

@@ -70,9 +70,26 @@ public class csAttractionRepo : IAttractionRepo
     
     public IAttraction AddAttraction(csAttractionCUdto itemDto)
     {
+        if (itemDto.AttractionId != null)
+            throw new ArgumentException($"{nameof(itemDto.AttractionId)} must be null when creating a new object");
+
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            throw new NotImplementedException();
+            //transfer any changes from DTO to database objects
+            //Update individual properties Attraction
+            var _item = new csAttractionDbM(itemDto);
+
+            //Update navigation properties
+            navProp_csAttractionCUdto_to_csAttractionDbM(db, itemDto, _item);
+
+            //write to database model
+            db.Attractions.Add(_item);
+
+            //write to database
+            db.SaveChanges();
+            
+            //return the updated item in non-flat mode
+            return ReadAttraction(_item.AttractionId);   
         }
     }
 
