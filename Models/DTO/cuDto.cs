@@ -26,7 +26,7 @@ namespace Models.DTO
     {
         public virtual Guid? CommentId { get; set; } 
         public virtual string Comment { get; set; }
-        public DateTime? Date {get; set; } = null;
+        public virtual DateTime Date {get; set; } 
 
         public virtual Guid? UserId { get; set; } = null;
         public virtual Guid? AttractionId { get; set;} = null;

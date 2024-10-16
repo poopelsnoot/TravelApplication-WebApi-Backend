@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DbContext.Migrations.SqlServerDbContext
 {
     [DbContext(typeof(csMainDbContext.SqlServerDbContext))]
-    [Migration("20241013190515_initial_migration")]
+    [Migration("20241016175255_initial_migration")]
     partial class initial_migration
     {
         /// <inheritdoc />
@@ -118,11 +118,6 @@ namespace DbContext.Migrations.SqlServerDbContext
                     b.HasIndex("AttractionId");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("Comment", "Date");
-
-                    b.HasIndex("Date", "UserId")
-                        .IsUnique();
 
                     b.ToTable("Comments");
                 });

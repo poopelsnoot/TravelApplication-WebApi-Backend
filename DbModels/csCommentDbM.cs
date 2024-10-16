@@ -9,8 +9,8 @@ using Seido.Utilities.SeedGenerator;
 
 namespace DbModels;
 
-[Index(nameof(Date), nameof(UserId), IsUnique =true)] //is unique because a user can't write multiple comments at the exact same time 
-[Index(nameof(Comment), nameof(Date))] //indexer
+// [Index(nameof(Date), nameof(UserId), IsUnique =true)] //is unique because a user can't write multiple comments at the exact same time 
+// [Index(nameof(Comment), nameof(Date))] //indexer
 public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csCommentDbM>
 {
     //primary key
@@ -18,6 +18,8 @@ public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csComment
     public override Guid CommentId { get; set; }
     [Required]
     public override string Comment { get; set; }
+    [Required]
+    public override DateTime Date {get; set; }
 
     //foreign key property
     [JsonIgnore]
@@ -48,6 +50,7 @@ public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csComment
 
     public override bool Equals(object obj) => Equals(obj as csCommentDbM);
     public override int GetHashCode() => (Comment, Date).GetHashCode();
+  
     #endregion
 
     #region seed

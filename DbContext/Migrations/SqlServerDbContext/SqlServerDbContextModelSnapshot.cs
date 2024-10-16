@@ -116,11 +116,6 @@ namespace DbContext.Migrations.SqlServerDbContext
 
                     b.HasIndex("UserId");
 
-                    b.HasIndex("Comment", "Date");
-
-                    b.HasIndex("Date", "UserId")
-                        .IsUnique();
-
                     b.ToTable("Comments");
                 });
 
