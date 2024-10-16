@@ -4,7 +4,7 @@ using Seido.Utilities.SeedGenerator;
 
 namespace Models;
 
-
+//comment model
 public class csComment : ISeed<csComment>, IComment, IEquatable<csComment>
 {
     

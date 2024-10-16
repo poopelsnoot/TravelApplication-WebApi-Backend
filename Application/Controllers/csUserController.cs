@@ -20,6 +20,7 @@ namespace AppWebbApi.Controllers
         private ILogger<csUserController> _logger = null;
         private IUserService _service = null;
         
+        //endpoint that reads all users
         [HttpGet()]
         [ActionName("ReadUsers")]
         [ProducesResponseType(200, Type = typeof(List<IUser>))]
@@ -41,6 +42,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint that reads a specified user in DTO format
         [HttpGet()]
         [ActionName("ReadUserDto")]
         [ProducesResponseType(200, Type = typeof(csUserCUdto))]
@@ -68,6 +70,7 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        //endpoint that adds a new user
         [HttpPost()]
         [ActionName("AddUser")]
         [ProducesResponseType(200, Type = typeof(IUser))]
@@ -90,6 +93,7 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        //endpoint that removes an existing user
         [HttpDelete()]
         [ActionName("RemoveUser")]
         [ProducesResponseType(200, Type = typeof(List<IUser>))]
@@ -111,7 +115,8 @@ namespace AppWebbApi.Controllers
             }
             
         }
-    
+
+        //constructor that injects logger and service
         public csUserController(IUserService service, ILogger<csUserController> logger)
         {
             _service = service;

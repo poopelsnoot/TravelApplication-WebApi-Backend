@@ -11,10 +11,12 @@ namespace DbRepos;
 
 public class csAttractionRepo : IAttractionRepo
 {
+    //read all attractions. Filtering is possible
    public List<IAttraction> ReadAttractions(int _count, string _category, string _attractionName, string _description, string _country, string _city)
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
+            //include address and comments, but not users
             var attractions = db.Attractions
             .Include(a => a.AddressDbM)
             .Include(a => a.CommentsDbM)
@@ -29,10 +31,12 @@ public class csAttractionRepo : IAttractionRepo
         }
     }
 
+    //read one attraction
     public IAttraction ReadAttraction(Guid _id) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
+            //including comments, users, address and attractions that share the same address
             var attraction = db.Attractions
             .Include(a => a.CommentsDbM)
             .ThenInclude(c => c.UserDbM)
@@ -44,6 +48,7 @@ public class csAttractionRepo : IAttractionRepo
         }
     }
 
+    //filter by city
     public List<IAttraction> ReadAttractionsByCity(string _city) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
@@ -55,6 +60,8 @@ public class csAttractionRepo : IAttractionRepo
             return attractions; 
         }
     }
+
+    //read attractions that have no comments
     public List<IAttraction> ReadAttractionsWithoutComments() 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
@@ -68,6 +75,7 @@ public class csAttractionRepo : IAttractionRepo
         }
     }
     
+    //add new attraction
     public IAttraction AddAttraction(csAttractionCUdto itemDto)
     {
         if (itemDto.AttractionId != null)
@@ -93,6 +101,7 @@ public class csAttractionRepo : IAttractionRepo
         }
     }
 
+    //update attraction
     public IAttraction UpdateAttraction(csAttractionCUdto itemDto)
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
@@ -126,6 +135,7 @@ public class csAttractionRepo : IAttractionRepo
         }
     }
 
+    //remove attraction
     public adminInfoDbDto RemoveAttraction(Guid _id) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))

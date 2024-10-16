@@ -3,13 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 //using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-
 using Models;
 using Seido.Utilities.SeedGenerator;
 
 namespace DbModels;
-//unique index
-[Index(nameof(Street),nameof(Zip), nameof(City), nameof(Country), IsUnique = true)] //is unique because there can not be 2 identical addresses in the same country
+
+//unique index because there can not be 2 identical addresses in the same country
+[Index(nameof(Street),nameof(Zip), nameof(City), nameof(Country), IsUnique = true)] 
 public class csAddressDbM : csAddress, ISeed<csAddressDbM>, IEquatable<csAddressDbM>
 {
     //primary key

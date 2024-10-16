@@ -1,14 +1,17 @@
 using DbModels;
 using Models;
 using Models.DTO;
+
 namespace DbRepos;
 
+//seed repo interface
 public interface ISeedRepo
 {
     public adminInfoDbDto SeedTestdata(int _count);
     public adminInfoDbDto RemoveAllTestdata(bool seeded);
 }
 
+//attraction repo interface
 public interface IAttractionRepo 
 {
     public List<IAttraction> ReadAttractions(int _count, string _category, string _attractionName, string _description, string _country, string _city);
@@ -20,6 +23,7 @@ public interface IAttractionRepo
     public adminInfoDbDto RemoveAttraction(Guid _id);
 }
 
+//user repo interface
 public interface IUserRepo 
 {
     public List<IUser> ReadUsers();
@@ -27,7 +31,7 @@ public interface IUserRepo
     public IUser AddUser(csUserCUdto itemDto);
     public adminInfoDbDto RemoveUser(Guid _id);
 }
-
+ //comment repo interface
 public interface ICommentRepo 
 {
     public List<IComment> ReadComments(Guid _attractionId);

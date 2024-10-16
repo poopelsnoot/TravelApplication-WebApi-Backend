@@ -9,8 +9,9 @@ using Seido.Utilities.SeedGenerator;
 
 namespace DbModels;
 
-// [Index(nameof(Date), nameof(UserId), IsUnique =true)] //is unique because a user can't write multiple comments at the exact same time 
-// [Index(nameof(Comment), nameof(Date))] //indexer
+//is unique because a user can't write multiple comments at the exact same time
+[Index(nameof(Date), nameof(UserId), IsUnique =true)]  
+[Index(nameof(Comment), nameof(Date))] //indexer
 public class csCommentDbM : csComment, ISeed<csCommentDbM>, IEquatable<csCommentDbM>
 {
     //primary key

@@ -1,7 +1,9 @@
 using Configuration;
 using Seido.Utilities.SeedGenerator;
+
 namespace Models;
 
+//address model
 public class csAddress : ISeed<csAddress>, IAddress, IEquatable<csAddress>
 {
     

@@ -1,6 +1,7 @@
 using System;
 namespace Models.DTO
 {
+    //user DTO
     public class csUserCUdto 
     {
         public virtual Guid? UserId {get; set; }
@@ -22,6 +23,7 @@ namespace Models.DTO
         }
     }
 
+    //comment DTO
     public class csCommentCUdto
     {
         public virtual Guid? CommentId { get; set; } 
@@ -43,6 +45,7 @@ namespace Models.DTO
         }
     }
 
+    //attraction DTO
     public class csAttractionCUdto
     {
         public virtual Guid? AttractionId {get; set; } 

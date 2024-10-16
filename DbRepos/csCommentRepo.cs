@@ -10,20 +10,27 @@ namespace DbRepos;
 
 public class csCommentRepo : ICommentRepo
 {
+    //read all comments for an attraction
     public List<IComment> ReadComments(Guid _attractionId) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
-            var comments = db.Comments.Include(a => a.UserDbM).Where(a => a.AttractionDbM.AttractionId == _attractionId).ToList<IComment>();
+            //include user
+            var comments = db.Comments
+            .Include(a => a.UserDbM)
+            .Where(a => a.AttractionDbM.AttractionId == _attractionId)
+            .ToList<IComment>();
                                                                          
             return comments;
         }
     }
 
+    //read one comment
     public IComment ReadComment(Guid _commentId) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
+            //include user and attraction
             var comment = db.Comments
             .Include(a => a.UserDbM)
             .Include(a => a.AttractionDbM)
@@ -33,6 +40,7 @@ public class csCommentRepo : ICommentRepo
         }
     }
 
+    //add comment
     public IComment AddComment(csCommentCUdto itemDto)
     {
         if (itemDto.CommentId != null)
@@ -58,6 +66,7 @@ public class csCommentRepo : ICommentRepo
         }
     }
 
+    //remove comment
     public adminInfoDbDto RemoveComment(Guid _id) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))

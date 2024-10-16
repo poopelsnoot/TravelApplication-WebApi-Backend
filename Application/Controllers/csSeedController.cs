@@ -21,6 +21,7 @@ namespace AppWebbApi.Controllers
         private ILogger<csSeedController> _logger = null;
         private ISeedService _service = null;
         
+        //endpoint that seeds a specified number of attractions, or 1000 by default
         [HttpPost()]
         [ActionName("SeedTestdata")]
         [ProducesResponseType(200, Type = typeof(adminInfoDbDto))]
@@ -43,6 +44,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint that removes all seeded data. It keeps the unseeded data
         [HttpDelete()]
         [ActionName("RemoveAllTestdata")]
         [ProducesResponseType(200, Type = typeof(adminInfoDbDto))]
@@ -64,6 +66,7 @@ namespace AppWebbApi.Controllers
             
         }
     
+        //constructor that injects logger and service
         public csSeedController(ISeedService service, ILogger<csSeedController> logger)
         {
             _service = service;

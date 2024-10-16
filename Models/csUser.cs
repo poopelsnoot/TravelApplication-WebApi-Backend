@@ -4,6 +4,7 @@ using Seido.Utilities.SeedGenerator;
 
 namespace Models;
 
+//user model
 public class csUser : ISeed<csUser>, IUser, IEquatable<csUser>
 {
 

@@ -79,7 +79,7 @@ public class csMainDbContext : Microsoft.EntityFrameworkCore.DbContext
                     b.HasOne("DbModels.csAddressDbM", "AddressDbM")
                         .WithMany("AttractionsDbM")
                         .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Cascade) //if address is removed, so is the attraction
                         .IsRequired();
 
                     b.Navigation("AddressDbM");
@@ -90,13 +90,13 @@ public class csMainDbContext : Microsoft.EntityFrameworkCore.DbContext
                     b.HasOne("DbModels.csAttractionDbM", "AttractionDbM")
                         .WithMany("CommentsDbM")
                         .HasForeignKey("AttractionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Cascade) //if attraction is removed, so are the comments
                         .IsRequired();
 
                     b.HasOne("DbModels.csUserDbM", "UserDbM")
                         .WithMany("CommentDbM")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Cascade) //if user is removed, so are the comments
                         .IsRequired();
 
                     b.Navigation("AttractionDbM");

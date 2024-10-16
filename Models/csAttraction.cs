@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Seido.Utilities.SeedGenerator;
 namespace Models;
 
-
+//attraction model
 public class csAttraction: ISeed<csAttraction>, IAttraction, IEquatable<csAttraction>
 {
     public virtual Guid AttractionId {get; set; } 
@@ -13,9 +13,10 @@ public class csAttraction: ISeed<csAttraction>, IAttraction, IEquatable<csAttrac
 
 
     // navigation props
-    // Attractions can have several comments
+    // Attraction can have many comments
     public virtual List<IComment> Comments {get; set;}
-    // attraction is located on one address
+
+    // attraction have one address
     public virtual IAddress Address { get; set;}
 
     #region implementing IEquatable

@@ -3,12 +3,15 @@ using Models;
 using Models.DTO;
 
 namespace Services;
+
+//seed service interface
 public interface ISeedService{
     public adminInfoDbDto SeedTestdata(int _count);
     public adminInfoDbDto RemoveAllTestdata(bool seeded);
 
 }
 
+//attraction service interface
 public interface IAttractionService{
 
     public List<IAttraction> ReadAttractions(int _count, string _category, string _attractionName, string _description, string _country, string _city);
@@ -21,6 +24,7 @@ public interface IAttractionService{
 
 }
 
+//user service interface
 public interface IUserService{
     public List<IUser> ReadUsers();
     public IUser ReadUser(Guid _cuserId);
@@ -28,6 +32,7 @@ public interface IUserService{
     public adminInfoDbDto RemoveUser(Guid _id);
 }
 
+//comment service interface
 public interface ICommentService{
     public List<IComment> ReadComments(Guid _attractionId);
     public IComment ReadComment(Guid _commentId);

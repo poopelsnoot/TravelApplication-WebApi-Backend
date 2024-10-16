@@ -6,9 +6,11 @@ using Newtonsoft.Json;
 using Models.DTO;
 using Models;
 using Seido.Utilities.SeedGenerator;
+
 namespace DbModels;
 
-[Index(nameof(FirstName),nameof(LastName), nameof(Age), nameof(Email), IsUnique = true)] //unique identifier
+//unique index to not have multiple identical users
+[Index(nameof(FirstName),nameof(LastName), nameof(Age), nameof(Email), IsUnique = true)] 
 public class csUserDbM : csUser, ISeed<csUserDbM>, IEquatable<csUserDbM>
 {
     //primary key

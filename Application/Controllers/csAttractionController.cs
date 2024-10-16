@@ -21,6 +21,7 @@ namespace AppWebbApi.Controllers
         private ILogger<csAttractionController> _logger = null;
         private IAttractionService _service = null;
         
+        //endpoint to read all attractions
         [HttpGet()]
         [ActionName("ReadAttractions")]
         [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
@@ -43,6 +44,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint to read one attraction
         [HttpGet()]
         [ActionName("ReadAttraction")]
         [ProducesResponseType(200, Type = typeof(IAttraction))]
@@ -65,6 +67,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint to read one attraction in DTO format
         [HttpGet()]
         [ActionName("ReadAttractionDto")]
         [ProducesResponseType(200, Type = typeof(csAttractionCUdto))]
@@ -92,6 +95,7 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        //endpoint to read all attractions in a specified city
         [HttpGet()]
         [ActionName("ReadAttractionsByCity")]
         [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
@@ -113,6 +117,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint to read all attractions that does not have any comments
         [HttpGet()]
         [ActionName("ReadAttractionsWithoutComments")]
         [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
@@ -134,6 +139,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint to add a new attraction
         [HttpPost()]
         [ActionName("AddAttraction")]
         [ProducesResponseType(200, Type = typeof(IAttraction))]
@@ -156,6 +162,7 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        //endpoint to update an existing attraction
         [HttpPut("{id}")]
         [ActionName("UpdateAttraction")]
         [ProducesResponseType(200, Type = typeof(csAttractionCUdto))]
@@ -183,6 +190,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint to remove an existing attraction
         [HttpDelete()]
         [ActionName("RemoveAttraction")]
         [ProducesResponseType(200, Type = typeof(List<IAttraction>))]
@@ -204,7 +212,8 @@ namespace AppWebbApi.Controllers
             }
             
         }
-    
+
+        //constructor that injects logger and service
         public csAttractionController(IAttractionService service, ILogger<csAttractionController> logger)
         {
             _service = service;

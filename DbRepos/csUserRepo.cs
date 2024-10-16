@@ -11,10 +11,12 @@ namespace DbRepos;
 
 public class csUserRepo : IUserRepo
 {
+    //read all users
     public List<IUser> ReadUsers() 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
+            //include comments
             var user = db.Users
             .Include(u => u.CommentDbM)
             .ToList<IUser>();
@@ -23,10 +25,12 @@ public class csUserRepo : IUserRepo
         }
     }
 
+    //read one user
     public IUser ReadUser(Guid _userId) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
+            //include comments
             var user = db.Users
             .Include(u => u.CommentDbM)
             .Where(a => a.UserId == _userId).FirstOrDefault();
@@ -35,6 +39,7 @@ public class csUserRepo : IUserRepo
         }
     }
 
+    //add new user
     public IUser AddUser(csUserCUdto itemDto)
     {
         if (itemDto.UserId != null)
@@ -60,6 +65,7 @@ public class csUserRepo : IUserRepo
         }
     }
 
+    //remove user
     public adminInfoDbDto RemoveUser(Guid _id)
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))

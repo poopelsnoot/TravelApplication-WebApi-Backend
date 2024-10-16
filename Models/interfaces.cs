@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Seido.Utilities.SeedGenerator;
 namespace Models;
 
+//attraction interface
 public interface IAttraction{
     
     public Guid AttractionId {get; set; }
@@ -11,14 +12,15 @@ public interface IAttraction{
     public string Description {get; set;}
 
     //navigation props
-    // Attractions can have several comments
+    //Attraction can have many comments
     public List<IComment> Comments {get; set;}
 
-    //An attraction will have one address
+    //attraction has one address
     public IAddress Address { get; set; }
 
 }
 
+//address interface
 public interface IAddress{
     
     public Guid AddressId { get; set; }
@@ -27,11 +29,12 @@ public interface IAddress{
     public string City {get; set;}
     public string Country {get; set;}
 
-    //navigation props. One address can have many attractions
+    //navigation prop. One address can have many attractions
     public List<IAttraction> Attractions {get; set;}
 
 }
 
+//comment interface
 public interface IComment{
     
     public Guid CommentId { get; set; }
@@ -40,12 +43,12 @@ public interface IComment{
     public DateTime Date {get; set; }
 
     //navigation props
-    // Comment has one user and one attraction
+    //Comment has one user and one attraction
     public IUser User { get; set; }
     public IAttraction Attraction { get; set; }
 }
 
-
+//user interface
 public interface IUser{
     public Guid UserId {get; set; }
     public string FirstName { get; set; }

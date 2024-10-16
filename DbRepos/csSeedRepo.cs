@@ -13,11 +13,12 @@ namespace DbRepos;
 public class csSeedRepo : ISeedRepo
 {
 
-    //seed default 1000 attractions with 0-20 comments each
+    //seed specified or default 1000 attractions with 0-20 comments each
     public adminInfoDbDto SeedTestdata(int _count)
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))
         {
+            //remove old seeded data first
             RemoveAllTestdata(true);
             var _seeder = new csSeedGenerator();
 
@@ -60,6 +61,7 @@ public class csSeedRepo : ISeedRepo
         
     }
 
+    //remove all seeded data
     public adminInfoDbDto RemoveAllTestdata(bool seeded) 
     {
         using (var db = csMainDbContext.DbContext("sysadmin"))

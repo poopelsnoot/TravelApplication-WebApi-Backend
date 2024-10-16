@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
 using Seido.Utilities.SeedGenerator;
-
 using Models;
 using Services;
 using Configuration;
@@ -22,6 +20,7 @@ namespace AppWebbApi.Controllers
         private ILogger<csCommentController> _logger = null;
         private ICommentService _service = null;
         
+        //endpoint to read all comments for a specified attraction
         [HttpGet()]
         [ActionName("ReadComments")]
         [ProducesResponseType(200, Type = typeof(List<IComment>))]
@@ -44,6 +43,7 @@ namespace AppWebbApi.Controllers
             
         }
 
+        //endpoint to read a specified comment in DTO format 
         [HttpGet()]
         [ActionName("ReadCommentDto")]
         [ProducesResponseType(200, Type = typeof(csCommentCUdto))]
@@ -71,6 +71,7 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        //endpoint to add a new comment
         [HttpPost()]
         [ActionName("AddComment")]
         [ProducesResponseType(200, Type = typeof(IComment))]
@@ -93,6 +94,7 @@ namespace AppWebbApi.Controllers
             }
         }
 
+        //endpoint to remove an existing comment
         [HttpDelete()]
         [ActionName("RemoveComment")]
         [ProducesResponseType(200, Type = typeof(List<IComment>))]
@@ -115,6 +117,7 @@ namespace AppWebbApi.Controllers
             
         }
     
+        //constructor that injects logger and service
         public csCommentController(ICommentService service, ILogger<csCommentController> logger)
         {
             _service = service;
