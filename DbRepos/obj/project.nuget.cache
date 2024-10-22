@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HqLD9WTUTncgxQyhUmqB/ZBBNDt4UaGxhY+WQObYooF2XKlNS6e0KeveSIoNsh1EQ92jMDPpkSQGkTOyf8BTVg==",
+  "dgSpecHash": "Imes5XL+0RAvRRVS6wQFFvA9K2SwGdEcq5wERhz8k3ppnC2TBML/Uv6vqdZa/hNLo6sO5PCPERgLF8gR7d8jRQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\DbRepos\\DbRepos.csproj",
+  "projectFilePath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager\\WebApiProject\\DbRepos\\DbRepos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sofie\\.nuget\\packages\\azure.core\\1.42.0\\azure.core.1.42.0.nupkg.sha512",
     "C:\\Users\\sofie\\.nuget\\packages\\azure.extensions.aspnetcore.configuration.secrets\\1.3.2\\azure.extensions.aspnetcore.configuration.secrets.1.3.2.nupkg.sha512",

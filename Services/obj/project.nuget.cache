@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nKz37Eqkf7nBV/1HKgzHDLzIRUyVN3HwoEX5Ldofz8gf6Uaxw9bY+ImvfH6BSpo/MUrsdzq2Npz4qJeldumVgg==",
+  "dgSpecHash": "NWZk21eLT3NfTYcU35FjwpgLHHgwln/mBk3rOBhMPPEDGEMmlw6mbgMlUjV6klElD+Q7lJif2MR8i4IJegscyQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt\\WebApiProject\\Services\\Services.csproj",
+  "projectFilePath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager\\WebApiProject\\Services\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sofie\\.nuget\\packages\\azure.core\\1.42.0\\azure.core.1.42.0.nupkg.sha512",
     "C:\\Users\\sofie\\.nuget\\packages\\azure.extensions.aspnetcore.configuration.secrets\\1.3.2\\azure.extensions.aspnetcore.configuration.secrets.1.3.2.nupkg.sha512",

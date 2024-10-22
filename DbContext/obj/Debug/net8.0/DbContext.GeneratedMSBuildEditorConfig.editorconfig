@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DbContext
-build_property.ProjectDir = c:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt\WebApiProject\DbContext\
+build_property.ProjectDir = C:\Users\sofie\Documents\.NET utveckling\Dataåtkomster i .NET\Projekt_Sofie_Thorsager\WebApiProject\DbContext\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
