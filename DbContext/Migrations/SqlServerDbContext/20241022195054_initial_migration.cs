@@ -116,6 +116,11 @@ namespace DbContext.Migrations.SqlServerDbContext
                 column: "AttractionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Comments_Comment_Date",
+                table: "Comments",
+                columns: new[] { "Comment", "Date" });
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Comments_UserId",
                 table: "Comments",
                 column: "UserId");

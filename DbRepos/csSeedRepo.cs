@@ -23,9 +23,9 @@ public class csSeedRepo : ISeedRepo
             var _seeder = new csSeedGenerator();
 
             //attractions to list
-            var _attractions = _seeder.ItemsToList<csAttractionDbM>(_count); 
+            var _attractions = _seeder.UniqueItemsToList<csAttractionDbM>(_count); 
             //users to list
-            var _users = _seeder.ItemsToList<csUserDbM>(50);
+            var _users = _seeder.UniqueItemsToList<csUserDbM>(50);
             //unique addresses to list
             var _addresses = _seeder.UniqueItemsToList<csAddressDbM>(_count);
             int idx = 0;
@@ -41,6 +41,7 @@ public class csSeedRepo : ISeedRepo
             }
             db.Attractions.AddRange(_attractions);
             db.Users.AddRange(_users);
+            db.Addresses.AddRange(_addresses);
 
             //changeTracker info
             int nrSeededAttractions = db.ChangeTracker.Entries().Count(

@@ -33,8 +33,8 @@ public class csAttraction: ISeed<csAttraction>, IAttraction, IEquatable<csAttrac
     {
         Seeded = true;
         AttractionId = Guid.NewGuid();
-        AttractionName = _seeder.FromString("Eifel Tower, The pentagon, Statue of Liberty, Wasa Museum, Big Ben, Sydney Opera House, Great Wall of China, Louvre Museum, Colosseum, Taj Mahal, Burj Khalifa, Machu Picchu, Christ the Redeemer, Petra");
-        Category = _seeder.FromString("Restaurant, Museum, Hike, Beach, Park, Gallery, Monument, Theater, Aquarium, Zoo");
+        AttractionName = _seeder.FromString("Eifel Tower, The pentagon, Statue of Liberty, Wasa Museum, Big Ben, Sydney Opera House, Great Wall of China, Louvre Museum, Colosseum, Taj Mahal, Burj Khalifa, Machu Picchu, Christ the Redeemer, Petra, Blue Lagoon, Big Ben");
+        Category = _seeder.FromString("Restaurant, Museum, Hike, Beach, Park, Gallery, Monument, Theater, Aquarium, Zoo, Cafe, Lake, Architecture, Culture, Statue");
         Description = _seeder.LatinSentence;
         
         return this;

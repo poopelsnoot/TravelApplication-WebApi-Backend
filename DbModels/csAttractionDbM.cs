@@ -10,7 +10,7 @@ using Models.DTO;
 namespace DbModels;
 
 //unique index to not have two identical attractions on the same address
-[Index(nameof(AttractionName),nameof(Category), nameof(Description), nameof(AddressId), IsUnique =true)] 
+[Index(nameof(AttractionName),nameof(Category), nameof(Description), nameof(AddressId), IsUnique = true)] 
 public class csAttractionDbM : csAttraction, ISeed<csAttractionDbM>, IEquatable<csAttractionDbM>
 {
     //primary key
