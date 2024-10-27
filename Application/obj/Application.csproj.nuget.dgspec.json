@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj": {}
+    "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj": {}
   },
   "projects": {
-    "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj": {
+    "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\sofie\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\obj\\",
+        "outputPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
-                "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
+              "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+                "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
               },
               "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Models\\Models.csproj": {
                 "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Models\\Models.csproj"
@@ -91,14 +91,14 @@
         }
       }
     },
-    "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+    "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj",
+        "projectUniqueName": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj",
         "projectName": "Configuration",
-        "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj",
+        "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj",
         "packagesPath": "C:\\Users\\sofie\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\obj\\",
+        "outputPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -210,8 +210,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
-                "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
+              "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+                "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
               },
               "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbModels\\DbModels.csproj": {
                 "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbModels\\DbModels.csproj"
@@ -314,8 +314,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
-                "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
+              "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+                "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
               },
               "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Models\\Models.csproj": {
                 "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Models\\Models.csproj"
@@ -366,14 +366,14 @@
         }
       }
     },
-    "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj": {
+    "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj",
+        "projectUniqueName": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj",
         "projectName": "DbRepos",
-        "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj",
+        "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj",
         "packagesPath": "C:\\Users\\sofie\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\obj\\",
+        "outputPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -395,8 +395,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
-                "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
+              "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+                "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
               },
               "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbContext\\DbContext.csproj": {
                 "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbContext\\DbContext.csproj"
@@ -468,8 +468,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
-                "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
+              "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+                "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
               }
             }
           }
@@ -538,8 +538,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
-                "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
+              "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+                "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
               },
               "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbContext\\DbContext.csproj": {
                 "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbContext\\DbContext.csproj"
@@ -547,8 +547,8 @@
               "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbModels\\DbModels.csproj": {
                 "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbModels\\DbModels.csproj"
               },
-              "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj": {
-                "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj"
+              "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj": {
+                "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\DbRepos\\DbRepos.csproj"
               },
               "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Models\\Models.csproj": {
                 "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Models\\Models.csproj"

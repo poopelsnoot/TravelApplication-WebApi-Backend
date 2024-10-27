@@ -1608,8 +1608,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
-              "projectPath": "c:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
+            "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj": {
+              "projectPath": "C:\\Users\\sofie\\Documents\\.NET utveckling\\Dataåtkomster i .NET\\Projekt_Sofie_Thorsager_2.0\\WebApiProject\\Configuration\\Configuration.csproj"
             }
           }
         }
